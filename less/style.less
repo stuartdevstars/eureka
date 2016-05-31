@@ -1,0 +1,475 @@
+@import "vendor/bootstrap/bootstrap.min.less";
+@import "fonts.less";
+@import "variables.less";
+@import "defaults.less";
+@import "helpers.less";
+@import "layout.less";
+
+#story-hero {
+	position: relative;
+	background-image: url('../img/story-bg.jpg');
+	background-repeat: repeat-x;
+
+	.hero-text {
+		position: absolute;
+		top: 10px;
+		left: 0;
+		right: 0;
+		width: 100%;
+		opacity: 0;
+
+		img {
+			margin: auto;
+		}
+	}
+}
+
+#promos {
+	margin-bottom: 3px;
+	padding: 10px 0;
+	box-shadow: 0 0 3px 2px #868686;
+
+	.promo {
+		position: relative;
+		opacity: 0;
+
+		&.coming-soon, &.featured-recipe {
+			box-shadow: 0 0 3px 2px #868686;
+		}
+
+		.text-center {
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 46px;
+			width: 100%;
+		}
+	}
+}
+
+#welcome {
+	padding: 30px 0;
+	background-image: url('../img/testimonial-bg.jpg');
+	background-repeat: repeat-x;
+
+	p {
+		margin: 0 0 50px 0;
+		color: #999999;
+		font-family: "BrandonGrotesque-RegularItalic";
+		font-size: 1.7rem;
+		line-height: 1.3;
+
+		span, a {
+			color: @primary-colour;
+			font-family: "BrandonGrotesque-Medium";
+		}
+
+		a {
+			text-decoration: underline;
+		}
+	}
+
+	.copyright {
+		color: #999999;
+		font-family: "BrandonGrotesque-Medium";
+		font-size: 1.1rem;
+		text-transform: uppercase;
+	}
+}
+
+#get-in-touch {
+	padding: 38px 0 0 0;
+	font-family: "VeneerThree";
+	background-image: url('../img/crumpled-paper-bg.jpg');
+	background-repeat: repeat-x;
+
+	h4 {
+		margin: 0 0 10px 0;
+		font-size: 2.2rem;
+	}
+
+	h5 {
+		margin: 0 0 10px 0;
+		font-size: 1.9rem;
+	}
+
+	hr {
+		margin: 0 0 25px 0;
+		border-bottom: 6px double #000000;
+	}
+
+	.field-required {
+		position: relative;
+
+		&:before {
+			content: "*";
+			position: absolute;
+			top: 6px;
+			left: -10px;
+			color: @primary-colour;
+		}
+	}
+
+	input, textarea {
+		margin-bottom: 15px;
+		padding: 5px;
+		width: 100%;
+		font-family: "BrandonGrotesque-Medium";
+		border: 2px solid #000000;
+	}
+
+	textarea {
+		height: 177px;
+	}
+
+	button {
+		height: 32px;
+		font-family: "BrandonGrotesque-Medium";
+		border: none;
+	}
+}
+
+#buy-info {
+	background-image: url('../img/testimonial-bg.jpg');
+	background-repeat: repeat;
+	border: 2px solid #000000;
+	overflow: hidden;
+
+	> header, > div {
+		padding: 25px;
+		border: 2px solid #000000;
+
+		&.small {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		&.store-details-text {
+			float: left;
+			width: 47.5%;
+		}
+
+		&.store-exclusive {
+			float: left;
+			width: 16%;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		&.empty {
+			float: left;
+			width: 36.5%;	
+		}
+	}
+
+	> header {
+		span {
+			font-family: "Kent4FPrinted";
+			font-size: 1.7rem;
+		}
+	}
+
+	.store-info {
+		float: left;
+		width: 63.5%;
+
+		.store {
+			margin-bottom: 15px;
+			padding-bottom: 15px;
+			border-bottom: 6px double #000000;
+			overflow: hidden;
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			a {
+				color: #0d141e;
+			}
+
+			p {
+				margin: 0 0 10px 0;
+			}
+
+			.contact {
+				float: left;
+				width: 40%;
+
+				img {
+					display: block;
+					margin-bottom: 15px;
+				}
+
+				p:last-child {
+					margin-bottom: 0;
+				}
+			}
+			.products {
+				float: right;
+				width: 60%;
+
+				> div {
+					float: left;
+					width: 50%;
+				}
+
+				h4 {
+					margin: 0 0 10px 0;
+					color: #302c2d;
+					font-family: "NexaRust";
+					font-size: 2.5rem;
+					font-weight: 100;
+					line-height: 2.5rem;
+
+					span {
+						display: block;
+						margin-top: -15px;
+						line-height: 1;
+					}
+				}
+
+				h5 {
+					margin: 0 0 10px 0;
+					font-family: "Kent4FPrintedShadowed";
+					font-size: 3.5rem;
+				}
+
+				a {
+					text-decoration: underline;
+				}
+
+				p:last-child {
+					margin-bottom: 0;
+				}
+
+				.fish h5 {
+					color: @primary-colour;
+				}
+
+				.meat h5 {
+					color: #ac1f2d;
+				}
+			}
+		}
+	}
+
+	.exclusive {
+		color: @primary-colour;
+	}
+
+	.brand-graphic {
+		float: right;
+		width: 36.5%;
+	}
+}
+
+#product-info {
+	font-size: 1.8rem;
+	border: 2px solid #000000;
+
+	.description, .map, .strapline, .sourced, .flavour {
+		border: 2px solid #000000;
+	}
+
+	div {
+		&.left {
+			float: left;
+			width: 60%;
+		}
+
+		&.right {
+			float: right;
+			width: 40%;
+		}
+
+		> div {
+			float: left;
+			width: 50%;
+		}
+	}
+
+	.strapline, .sourced, .flavour {
+		padding: 15px 10px;
+		font-family: "Kent4FPrintedShadowed";
+	}
+
+	.description {
+		padding: 15px 20px;
+		font-family: "BrandonGrotesque-Medium";
+
+		span {
+			font-family: "Kent4FPrintedShadowed";
+		}
+	}
+}
+
+#view-recipes {
+	float: left;
+	width: 178px;
+}
+
+#product-ingredients {
+	float: right;
+	width: 315px;
+	padding: 20px;
+	background-image: url('../img/crumpled-paper-bg.jpg');
+
+	article {
+		margin-bottom: 10px;
+		border-bottom: 6px double #000000;
+
+		h4 {
+			margin: 0 0 10px 0;
+			font-family: "VeneerThree";
+			font-size: 1.9rem;
+
+			a {
+				float: right;
+				display: inline-block;
+				width: 24px;
+				height: 24px;
+				color: #ffffff;
+				font-size: 2.4rem;
+				text-align: center;
+				line-height: 24px;
+				background: @primary-colour;
+				border-radius: 50%;
+
+				&:hover, &:active, &:focus {
+					text-decoration: none;
+				}
+			}
+		}
+
+		.content {
+			display: none;
+			margin: 0 0 10px 0;
+		}
+
+		&:first-child {
+			.content {
+				display: block;
+			}
+		}
+	}
+}
+
+.recipe-box {
+	float: left;
+	padding: 10px;
+	background: #ffffff;
+
+	.recipes & {
+		width: 18%;
+		margin-left: 1%;
+		margin-right: 1%;
+		margin-bottom: 2%;
+	}
+
+	.recipes &.featured {
+		width: 58%
+	}
+
+	h4 {
+		margin: 10px 0;
+	}
+}
+
+.recipe {
+	.recipe-overview {
+		position: relative;
+		padding: 10px;
+		background-image: url('../img/crumpled-paper-bg.jpg');
+		border: 3px solid #000000;
+
+		.stamp {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+		}
+
+		header {
+			width: 75%;
+			font-family: "VeneerThree";
+		}
+
+		h2 {
+			margin: 0;
+			font-size: 4rem;
+		}
+
+		hr {
+			margin-top: 5px;
+			margin-bottom: 10px;
+			border-top: 4px solid #000000;
+		}
+
+		ul {
+			margin-bottom: 10px;
+			font-size: 1.8rem;
+			overflow: hidden;
+		}
+
+		li {
+			float: left;
+			display: inline-block;
+
+			&:not(:last-child) {
+				margin-right: 10px;
+				padding-right: 10px;
+				border-right: 2px solid #000000;
+			}
+		}
+	}
+
+	.recipe-detail {
+		padding: 15px;
+		background-image: url('../img/crumpled-paper-bg.jpg');
+
+		section {
+			padding: 15px 0;
+			border-bottom: 6px double #000000;
+
+			&:first-child {
+				border-top: 6px double #000000;			
+			}
+
+			header {
+				h3 {
+					margin: 0;
+					font-family: "VeneerThree";
+					font-size: 1.9rem;
+
+					a {
+						float: right;
+						display: inline-block;
+						width: 24px;
+						height: 24px;
+						color: #ffffff;
+						font-size: 2.4rem;
+						text-align: center;
+						line-height: 24px;
+						background: @primary-colour;
+						border-radius: 50%;
+
+						&:hover, &:active, &:focus {
+							text-decoration: none;
+						}
+					}
+				}
+			}
+
+			.content {
+				margin-top: 15px;
+
+				li {
+					margin-bottom: 5px;
+				}
+			}
+
+			&:not(:first-child) .content {
+				display: none;
+			}
+		}
+	}
+}
