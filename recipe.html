@@ -68,23 +68,24 @@
 			</div>
 		</div>
 	</nav>
-	<main id="main" class="recipe">
+	<main id="main" class="recipe" itemscope="" itemtype="http://schema.org/Recipe">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="recipe-overview">
 						<img src="img/recipes/featured-recipe-stamp.png" class="stamp">
 						<header>
-							<h2>Lorem ipsum dolor sit second line possible</h2>
+							<h2 itemprop="name">Lorem ipsum dolor sit second line possible</h2>
+							<!--<p itemprop="description">Recipe description goes here</p>-->
 							<hr />
 							<ul>
 								<li>Fish</li>
 								<li>Serves: 2</li>
-								<li>Prep-time: 30m</li>
-								<li>Cooking time: 2hrs</li>
+								<li>Prep-time: <time datetime="PT30M" itemprop="prepTime">30m</time></li>
+								<li>Cooking time: <time datetime="PT2H" itemprop="cookTime">2hrs</time></li>
 							</ul>
 						</header>
-						<img src="img/recipes/fish-recipe-large.png" class="img-responsive">
+						<img src="img/recipes/fish-recipe-large.png" class="img-responsive" itemprop="image">
 					</div>
 				</div>
 				<div class="col-sm-4">
@@ -110,17 +111,17 @@
 							</header>
 							<div class="content">
 								<ul>
-									<li>XXXg Lorem ipsum dolor sit amet</li>
-									<li>2 Consectetur</li>
-									<li>XXg Eiusmod tempor incididunt ut labore</li>
-									<li>XXXg Lorem ipsum dolor sit amet</li>
-									<li>1 Consectetur</li>
-									<li>XXg Eiusmod tempor incididunt ut labore</li>
-									<li>XXXg Lorem ipsum dolor sit amet</li>
-									<li>3 Consectetur</li>
-									<li>XXg Eiusmod tempor incididunt ut labore</li>
-									<li>XXXg Lorem ipsum dolor sit amet</li>
-									<li>4 Consectetur</li>
+									<li itemprop="ingredients">XXXg Lorem ipsum dolor sit amet</li>
+									<li itemprop="ingredients">2 Consectetur</li>
+									<li itemprop="ingredients">XXg Eiusmod tempor incididunt ut labore</li>
+									<li itemprop="ingredients">XXXg Lorem ipsum dolor sit amet</li>
+									<li itemprop="ingredients">1 Consectetur</li>
+									<li itemprop="ingredients">XXg Eiusmod tempor incididunt ut labore</li>
+									<li itemprop="ingredients">XXXg Lorem ipsum dolor sit amet</li>
+									<li itemprop="ingredients">3 Consectetur</li>
+									<li itemprop="ingredients">XXg Eiusmod tempor incididunt ut labore</li>
+									<li itemprop="ingredients">XXXg Lorem ipsum dolor sit amet</li>
+									<li itemprop="ingredients">4 Consectetur</li>
 								</ul>
 							</div>
 						</section>
@@ -128,8 +129,8 @@
 							<header>
 								<h3 class="clearfix">Method <a href="">+</a></h3>
 							</header>
-							<div class="content">
-								<ul>
+							<div class="content" itemprop="recipeInstructions">
+								<ol>
 									<li>XXXg Lorem ipsum dolor sit amet</li>
 									<li>2 Consectetur</li>
 									<li>XXg Eiusmod tempor incididunt ut labore</li>
@@ -141,7 +142,7 @@
 									<li>XXg Eiusmod tempor incididunt ut labore</li>
 									<li>XXXg Lorem ipsum dolor sit amet</li>
 									<li>4 Consectetur</li>
-								</ul>
+								</ol>
 							</div>
 						</section>
 					</article>
