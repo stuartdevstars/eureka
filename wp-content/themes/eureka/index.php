@@ -51,11 +51,6 @@
 			<div class="col-sm-3">
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="copyright text-center">&copy; Eureka! Cove  |  Terms &amp; Conditions  |  Privacy Policy  |  Site by feel</div>
-			</div>
-		</div>
 	</div>
 </section>
 

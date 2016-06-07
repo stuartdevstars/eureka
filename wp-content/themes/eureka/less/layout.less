@@ -47,8 +47,10 @@ nav#nav {
 				margin-right: 0;
 			}
 
-			&:hover, &:focus, &.active {
-				background: @primary-colour;
+			&:not(.home) {
+				&:hover, &:focus, &.active {
+					background: @primary-colour;
+				}
 			}
 
 			&.home {

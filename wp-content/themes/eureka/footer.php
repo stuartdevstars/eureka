@@ -1,3 +1,17 @@
+	</main>
+	
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+				</div>
+			</div>
+		</div>
+		<section class="copyright">
+			<div class="text-center">&copy; Eureka! Cove  |  Terms &amp; Conditions  |  Privacy Policy  |  Site by feel</div>
+		</section>
+	</footer>
+
     <section id="get-in-touch">
 		<div class="container">
 			<div class="row">

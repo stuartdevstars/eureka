@@ -1069,9 +1069,9 @@ nav#nav ul li {
 nav#nav ul li:last-child {
   margin-right: 0;
 }
-nav#nav ul li:hover,
-nav#nav ul li:focus,
-nav#nav ul li.active {
+nav#nav ul li:not(.home):hover,
+nav#nav ul li:not(.home):focus,
+nav#nav ul li:not(.home).active {
   background: #2369be;
 }
 nav#nav ul li.home {

@@ -23,7 +23,6 @@ function create_post_types()
 		'show_ui' => true,
 		'query_var' => true,
 		//'menu_icon' => get_stylesheet_directory_uri() . '/article16.png',
-		'rewrite' => true,
 		'capability_type' => 'post',
 		'hierarchical' => false,
 		'menu_position' => null,
@@ -60,6 +59,8 @@ function admin_init(){
 
 	add_meta_box("recipe-details-meta", "Recipe details", "add_recipe_meta", "ec_recipe", "normal", "low");
 	add_meta_box("recipe-dietary-meta", "Dietary information", "add_recipe_dietary_meta", "ec_recipe", "normal", "low");
+	add_meta_box("recipe-ingredients", "Ingredients", "add_recipe_ingredients", "ec_recipe", "normal", "low");
+	add_meta_box("recipe-method", "Method", "add_recipe_method", "ec_recipe", "normal", "low");
 	//add_meta_box("credits_meta", "Design &amp; Build Credits", "credits_meta", "portfolio", "normal", "low");
 }
  
@@ -98,17 +99,39 @@ function add_recipe_dietary_meta()
 {
 	global $post;
 	$recipe = get_post_custom($post->ID);
-	//var_dump($recipe['dietary_information'][0]);
-	//die();
+	$dietary_information = unserialize($recipe['dietary_information'][0]);
+
 	?>
 	<ul>
-		<li><label><input type="checkbox" name="dietary_information[]" value="Gluten free" /> Gluten free</label></li>
-		<li><label><input type="checkbox" name="dietary_information[]" value="Vegan" /> Vegan</label></li>
-		<li><label><input type="checkbox" name="dietary_information[]" value="Vegetarian" /> Vegetarian</label></li>
-		<li><label><input type="checkbox" name="dietary_information[]" value="Kosher" /> Kosher</label></li>
-		<li><label><input type="checkbox" name="dietary_information[]" value="Halal" /> Halal</label></li>
-		<li><label><input type="checkbox" name="dietary_information[]" value="Diary free" /> Diary free</label></li>
+		<li><label><input type="checkbox" name="dietary_information[]" value="Gluten free"<?php if(in_array('Gluten free', $dietary_information)):?> checked="checked"<?php endif; ?> /> Gluten free</label></li>
+		<li><label><input type="checkbox" name="dietary_information[]" value="Vegan"<?php if(in_array('Vegan', $dietary_information)):?> checked="checked"<?php endif; ?> /> Vegan</label></li>
+		<li><label><input type="checkbox" name="dietary_information[]" value="Vegetarian"<?php if(in_array('Vegetarian', $dietary_information)):?> checked="checked"<?php endif; ?> /> Vegetarian</label></li>
+		<li><label><input type="checkbox" name="dietary_information[]" value="Kosher"<?php if(in_array('Kosher', $dietary_information)):?> checked="checked"<?php endif; ?> /> Kosher</label></li>
+		<li><label><input type="checkbox" name="dietary_information[]" value="Halal"<?php if(in_array('Halal', $dietary_information)):?> checked="checked"<?php endif; ?> /> Halal</label></li>
+		<li><label><input type="checkbox" name="dietary_information[]" value="Diary free"<?php if(in_array('Diary free', $dietary_information)):?> checked="checked"<?php endif; ?> /> Diary free</label></li>
 	</ul>
+	<?php
+}
+
+function add_recipe_ingredients()
+{
+	global $post;
+	$recipe = get_post_custom($post->ID);
+	?>
+	<div class="field">
+		<textarea name="recipe_ingredients" rows="10" style="width: 100%;"><?php echo $recipe["recipe_ingredients"][0]; ?></textarea>
+	</div>
+	<?php
+}
+
+function add_recipe_method()
+{
+	global $post;
+	$recipe = get_post_custom($post->ID);
+	?>
+	<div class="field">
+		<textarea name="recipe_method" rows="10" style="width: 100%;"><?php echo $recipe["recipe_method"][0]; ?></textarea>
+	</div>
 	<?php
 }
 
@@ -128,6 +151,8 @@ function save_recipe()
 	update_post_meta($post->ID, "recipe_prep_time", $_POST["recipe_prep_time"]);
 	update_post_meta($post->ID, "recipe_cooking_time", $_POST["recipe_cooking_time"]);
 	update_post_meta($post->ID, "dietary_information", $_POST["dietary_information"]);
+	update_post_meta($post->ID, "recipe_ingredients", $_POST["recipe_ingredients"]);
+	update_post_meta($post->ID, "recipe_method", $_POST["recipe_method"]);
 }
 
 // Breadcrumbs
