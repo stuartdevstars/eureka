@@ -54,8 +54,11 @@ function create_post_types()
 }
 
 add_action("admin_init", "admin_init");
+
 function admin_init(){
-	add_meta_box("year_completed-meta", "Year Completed", "year_completed", "ec_product", "side", "low");
+	add_meta_box("product-ingredients", "Product ingredients", "add_product_ingredients", "ec_product", "normal", "low");
+	add_meta_box("product-nutritional-information", "Product nutritional information", "add_product_nutritional_information", "ec_product", "normal", "low");
+	add_meta_box("product-where-to-buy", "Where to buy", "add_product_where_to_buy", "ec_product", "normal", "low");
 
 	add_meta_box("recipe-details-meta", "Recipe details", "add_recipe_meta", "ec_recipe", "normal", "low");
 	add_meta_box("recipe-dietary-meta", "Dietary information", "add_recipe_dietary_meta", "ec_recipe", "normal", "low");
@@ -64,15 +67,25 @@ function admin_init(){
 	//add_meta_box("credits_meta", "Design &amp; Build Credits", "credits_meta", "portfolio", "normal", "low");
 }
  
-function year_completed()
+function add_product_ingredients()
 {
 	global $post;
-	$custom = get_post_custom($post->ID);
-	$year_completed = $custom["year_completed"][0];
-	?>
-	<label>Year:</label>
-	<input name="year_completed" value="<?php echo $year_completed; ?>" />
-	<?php
+	$product = get_post_custom($post->ID);
+	wp_editor(htmlspecialchars_decode($product["product_ingredients"][0]), 'product_ingredients', $settings = array('textarea_name'=>'product_ingredients'));
+}
+
+function add_product_nutritional_information()
+{
+	global $post;
+	$product = get_post_custom($post->ID);
+	wp_editor(htmlspecialchars_decode($product["product_nutritional_information"][0]), 'product_nutritional_information', $settings = array('textarea_name'=>'product_nutritional_information'));
+}
+
+function add_product_where_to_buy()
+{
+	global $post;
+	$product = get_post_custom($post->ID);
+	wp_editor(htmlspecialchars_decode($product["product_where_to_buy"][0]), 'product_where_to_buy', $settings = array('textarea_name'=>'product_where_to_buy'));
 }
 
 function add_recipe_meta()
@@ -103,12 +116,12 @@ function add_recipe_dietary_meta()
 
 	?>
 	<ul>
-		<li><label><input type="checkbox" name="dietary_information[]" value="Gluten free"<?php if(in_array('Gluten free', $dietary_information)):?> checked="checked"<?php endif; ?> /> Gluten free</label></li>
-		<li><label><input type="checkbox" name="dietary_information[]" value="Vegan"<?php if(in_array('Vegan', $dietary_information)):?> checked="checked"<?php endif; ?> /> Vegan</label></li>
-		<li><label><input type="checkbox" name="dietary_information[]" value="Vegetarian"<?php if(in_array('Vegetarian', $dietary_information)):?> checked="checked"<?php endif; ?> /> Vegetarian</label></li>
-		<li><label><input type="checkbox" name="dietary_information[]" value="Kosher"<?php if(in_array('Kosher', $dietary_information)):?> checked="checked"<?php endif; ?> /> Kosher</label></li>
-		<li><label><input type="checkbox" name="dietary_information[]" value="Halal"<?php if(in_array('Halal', $dietary_information)):?> checked="checked"<?php endif; ?> /> Halal</label></li>
-		<li><label><input type="checkbox" name="dietary_information[]" value="Diary free"<?php if(in_array('Diary free', $dietary_information)):?> checked="checked"<?php endif; ?> /> Diary free</label></li>
+		<li><label><input type="checkbox" name="dietary_information[]" value="Gluten free"<?php if(!empty($dietary_information) && in_array('Gluten free', $dietary_information)):?> checked="checked"<?php endif; ?> /> Gluten free</label></li>
+		<li><label><input type="checkbox" name="dietary_information[]" value="Vegan"<?php if(!empty($dietary_information) && in_array('Vegan', $dietary_information)):?> checked="checked"<?php endif; ?> /> Vegan</label></li>
+		<li><label><input type="checkbox" name="dietary_information[]" value="Vegetarian"<?php if(!empty($dietary_information) && in_array('Vegetarian', $dietary_information)):?> checked="checked"<?php endif; ?> /> Vegetarian</label></li>
+		<li><label><input type="checkbox" name="dietary_information[]" value="Kosher"<?php if(!empty($dietary_information) && in_array('Kosher', $dietary_information)):?> checked="checked"<?php endif; ?> /> Kosher</label></li>
+		<li><label><input type="checkbox" name="dietary_information[]" value="Halal"<?php if(!empty($dietary_information) && in_array('Halal', $dietary_information)):?> checked="checked"<?php endif; ?> /> Halal</label></li>
+		<li><label><input type="checkbox" name="dietary_information[]" value="Diary free"<?php if(!empty($dietary_information) && in_array('Diary free', $dietary_information)):?> checked="checked"<?php endif; ?> /> Diary free</label></li>
 	</ul>
 	<?php
 }
@@ -117,22 +130,14 @@ function add_recipe_ingredients()
 {
 	global $post;
 	$recipe = get_post_custom($post->ID);
-	?>
-	<div class="field">
-		<textarea name="recipe_ingredients" rows="10" style="width: 100%;"><?php echo $recipe["recipe_ingredients"][0]; ?></textarea>
-	</div>
-	<?php
+	wp_editor(htmlspecialchars_decode($recipe["recipe_ingredients"][0]), 'recipe_ingredients', $settings = array('textarea_name'=>'recipe_ingredients'));
 }
 
 function add_recipe_method()
 {
 	global $post;
 	$recipe = get_post_custom($post->ID);
-	?>
-	<div class="field">
-		<textarea name="recipe_method" rows="10" style="width: 100%;"><?php echo $recipe["recipe_method"][0]; ?></textarea>
-	</div>
-	<?php
+	wp_editor(htmlspecialchars_decode($recipe["recipe_method"][0]), 'recipe_method', $settings = array('textarea_name'=>'recipe_method'));
 }
 
 add_action('save_post_ec_product', 'save_product');
@@ -141,6 +146,10 @@ add_action('save_post_ec_recipe', 'save_recipe');
 function save_product()
 {
 	global $post;
+
+	update_post_meta($post->ID, "product_ingredients", $_POST["product_ingredients"]);
+	update_post_meta($post->ID, "product_nutritional_information", $_POST["product_nutritional_information"]);
+	update_post_meta($post->ID, "product_where_to_buy", $_POST["product_where_to_buy"]);
 }
 
 function save_recipe()

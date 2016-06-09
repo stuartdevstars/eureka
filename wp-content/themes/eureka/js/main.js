@@ -31,6 +31,15 @@
 		$("#product-info .sourced, #product-info .flavour").css('height', maxHeight3 + 'px');
 
 		$("#product-info .description, #product-ingredients").css('min-height', maxHeight2 + maxHeight3+ 'px');
+
+		$('.recipes .row').each(function() {
+			var $maxHeight = 0;
+			$(this).find('.recipe-box').each(function(){
+				$maxHeight = $(this).height();
+			});
+
+			$(this).find('.recipe-box').height($maxHeight);
+		});
 	});
 
 	$('#product-ingredients h4 a, .recipe-detail h3 a').click(function(e) {

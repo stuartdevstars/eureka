@@ -5,12 +5,17 @@
 
 <?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
+		<?php $image = get_field('recipe_image'); ?>
+		<?php $featured = get_field('featured_recipe'); ?>
 		<div class="recipe" itemscope="" itemtype="http://schema.org/Recipe">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="recipe-overview">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/recipes/featured-recipe-stamp.png" class="stamp">
+							<?php if($featured): ?>
+								<img src="<?php echo get_template_directory_uri(); ?>/img/recipes/featured-recipe-stamp.png" class="stamp">
+							<?php endif; ?>
+							
 							<header>
 								<h2 itemprop="name"><?php the_title(); ?></h2>
 								<div itemprop="description" class="sr-only"><?php the_content(); ?></div>
@@ -22,7 +27,7 @@
 									<li>Cooking time: <time datetime="PT2H" itemprop="cookTime"><?php echo $recipe_meta['recipe_cooking_time'][0]; ?></time></li>
 								</ul>
 							</header>
-							<img src="<?php echo get_template_directory_uri(); ?>/img/recipes/fish-recipe-large.png" class="img-responsive" itemprop="image">
+							<img src="<?php echo $image['sizes']['large']; ?>" class="img-responsive" itemprop="image">
 						</div>
 					</div>
 					<div class="col-sm-4">
@@ -33,12 +38,12 @@
 								</header>
 								<div class="content">
 									<ul>
-										<li<?php if(!in_array('Gluten free', $dietary_information)): ?> class="disabled"<?php endif; ?>>Gluten free</li>
-										<li<?php if(!in_array('Vegan', $dietary_information)): ?> class="disabled"<?php endif; ?>>Vegan</li>
-										<li<?php if(!in_array('Vegetarian', $dietary_information)): ?> class="disabled"<?php endif; ?>>Vegetarian</li>
-										<li<?php if(!in_array('Kosher', $dietary_information)): ?> class="disabled"<?php endif; ?>>Kosher</li>
-										<li<?php if(!in_array('Halal', $dietary_information)): ?> class="disabled"<?php endif; ?>>Halal</li>
-										<li<?php if(!in_array('Diary free', $dietary_information)): ?> class="disabled"<?php endif; ?>>Diary free</li>
+										<li<?php if(!empty($dietary_information) && !in_array('Gluten free', $dietary_information) || empty($dietary_information)): ?> class="disabled"<?php endif; ?>>Gluten free</li>
+										<li<?php if(!empty($dietary_information) && !in_array('Vegan', $dietary_information) || empty($dietary_information)): ?> class="disabled"<?php endif; ?>>Vegan</li>
+										<li<?php if(!empty($dietary_information) && !in_array('Vegetarian', $dietary_information) || empty($dietary_information)): ?> class="disabled"<?php endif; ?>>Vegetarian</li>
+										<li<?php if(!empty($dietary_information) && !in_array('Kosher', $dietary_information) || empty($dietary_information)): ?> class="disabled"<?php endif; ?>>Kosher</li>
+										<li<?php if(!empty($dietary_information) && !in_array('Halal', $dietary_information) || empty($dietary_information)): ?> class="disabled"<?php endif; ?>>Halal</li>
+										<li<?php if(!empty($dietary_information) && !in_array('Diary free', $dietary_information) || empty($dietary_information)): ?> class="disabled"<?php endif; ?>>Diary free</li>
 									</ul>
 								</div>
 							</section>
@@ -47,19 +52,7 @@
 									<h3 class="clearfix">Ingredients <a href="">+</a></h3>
 								</header>
 								<div class="content">
-									<ul>
-										<li itemprop="ingredients">XXXg Lorem ipsum dolor sit amet</li>
-										<li itemprop="ingredients">2 Consectetur</li>
-										<li itemprop="ingredients">XXg Eiusmod tempor incididunt ut labore</li>
-										<li itemprop="ingredients">XXXg Lorem ipsum dolor sit amet</li>
-										<li itemprop="ingredients">1 Consectetur</li>
-										<li itemprop="ingredients">XXg Eiusmod tempor incididunt ut labore</li>
-										<li itemprop="ingredients">XXXg Lorem ipsum dolor sit amet</li>
-										<li itemprop="ingredients">3 Consectetur</li>
-										<li itemprop="ingredients">XXg Eiusmod tempor incididunt ut labore</li>
-										<li itemprop="ingredients">XXXg Lorem ipsum dolor sit amet</li>
-										<li itemprop="ingredients">4 Consectetur</li>
-									</ul>
+									<?php echo str_replace('<li', '<li itemprop="ingredients"', $recipe_meta['recipe_ingredients'][0]); ?>
 								</div>
 							</section>
 							<section>
@@ -67,19 +60,7 @@
 									<h3 class="clearfix">Method <a href="">+</a></h3>
 								</header>
 								<div class="content" itemprop="recipeInstructions">
-									<ol>
-										<li>XXXg Lorem ipsum dolor sit amet</li>
-										<li>2 Consectetur</li>
-										<li>XXg Eiusmod tempor incididunt ut labore</li>
-										<li>XXXg Lorem ipsum dolor sit amet</li>
-										<li>1 Consectetur</li>
-										<li>XXg Eiusmod tempor incididunt ut labore</li>
-										<li>XXXg Lorem ipsum dolor sit amet</li>
-										<li>3 Consectetur</li>
-										<li>XXg Eiusmod tempor incididunt ut labore</li>
-										<li>XXXg Lorem ipsum dolor sit amet</li>
-										<li>4 Consectetur</li>
-									</ol>
+									<?php echo $recipe_meta['recipe_method'][0]; ?>
 								</div>
 							</section>
 						</article>

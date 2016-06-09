@@ -1443,10 +1443,43 @@ footer#footer .copyright {
   margin-bottom: 2%;
 }
 .recipes .recipe-box.featured {
+  position: relative;
   width: 58%;
+}
+.recipes .recipe-box.featured > div:first-child {
+  width: 42%;
+}
+.recipes .recipe-box.featured > div:last-child {
+  float: right;
+  width: 58%;
+  padding-left: 10px;
+}
+.recipes .recipe-box.featured header {
+  margin-top: 10px;
+}
+.recipes .recipe-box.featured .content {
+  margin-top: 20px;
+  border-top: 6px double #222222;
+}
+.recipes .recipe-box.featured ul li,
+.recipes .recipe-box.featured table td {
+  padding: 5px 5px 0 5px;
+}
+.recipes .recipe-box.featured .disabled {
+  color: #888888;
+}
+.recipes .recipe-box.featured .btn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
 .recipe-box h4 {
   margin: 10px 0;
+  font-family: "VeneerThree";
+  font-size: 1.7rem;
+}
+.recipe-box h4 a {
+  color: #222222;
 }
 .recipe .recipe-overview {
   position: relative;

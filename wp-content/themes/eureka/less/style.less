@@ -377,11 +377,51 @@ Tags:
 	}
 
 	.recipes &.featured {
-		width: 58%
+		position: relative;
+		width: 58%;
+
+		> div:first-child {
+			width: 42%;
+		}
+
+		> div:last-child {
+			float: right;
+			width: 58%;
+			padding-left: 10px;
+		}
+
+		header {
+			margin-top: 10px;
+		}
+
+		.content {
+			margin-top: 20px;
+			border-top: 6px double #222222;	
+		}
+
+		ul li, table td {
+			padding: 5px 5px 0 5px;
+		}
+
+		.disabled {
+			color: #888888;
+		}
+
+		.btn {
+			position: absolute;
+			right: 10px;
+			bottom: 10px;
+		}
 	}
 
 	h4 {
 		margin: 10px 0;
+		font-family: "VeneerThree";
+		font-size: 1.7rem;
+
+		a {
+			color: #222222;
+		}
 	}
 }
 

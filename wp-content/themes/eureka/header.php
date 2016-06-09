@@ -35,9 +35,9 @@
                     </a>
                     <div class="social">
                         <a href="https://www.facebook.com" title="Like Eureka Cove on Facebook"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/facebook.svg" alt="Facebook logo" width="18"></a>
-                        <a href="https://www.facebook.com" title="Follow Eureka Cove on Twitter"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/twitter.svg" alt="Twitter logo" width="18"></a>
-                        <a href="https://www.facebook.com" title="Follow Eureka Cove on Instagram"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/instagram.svg" alt="Instagram logo" width="18"></a>
-                        <a href="https://www.facebook.com" title="Subscribe to Eureka Cove on YouTube"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/youtube.svg" alt="YouTube logo" width="18"></a>
+                        <a href="https://www.twitter.com" title="Follow Eureka Cove on Twitter"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/twitter.svg" alt="Twitter logo" width="18"></a>
+                        <a href="https://www.instagram.com" title="Follow Eureka Cove on Instagram"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/instagram.svg" alt="Instagram logo" width="18"></a>
+                        <a href="https://www.youtube.com" title="Subscribe to Eureka Cove on YouTube"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/youtube.svg" alt="YouTube logo" width="18"></a>
                     </div>
                 </div>
             </div>
@@ -67,17 +67,22 @@
                             <a href="<?php echo get_site_url(); ?>/where-to-buy" title="Find out where to buy our products">Where to buy</a>
                         </li>
                     </ul>
-                    <ul class="sub-nav our-products">
-                        <li><a href="<?php echo get_site_url(); ?>/products/chicken-drumsticks" title="View our Chicken drumsticks product">Chicken drumsticks</a></li>
-                        <li><a href="<?php echo get_site_url(); ?>/products/baby-beef-sausages" title="View our Baby beef sausages product">Baby beef sausages</a></li>
-                        <li><a href="<?php echo get_site_url(); ?>/products/continental-beef-sausages" title="View our Continental beef sausages product">Continental beef sausages</a></li>
-                        <li><a href="<?php echo get_site_url(); ?>/products/lean-meatballs" title="View our Lean meatballs product">Lean meatballs</a></li>
-                    </ul>
+                    
+                    <?php $args = array('post_type' => 'ec_product'); ?>
+                    <?php $loop = new WP_Query($args); ?>
+                    <?php if($loop->have_posts()) : ?>
+                        <ul class="sub-nav our-products">
+                            <?php while($loop->have_posts()) : $loop->the_post(); ?>
+                                <li><a href="<?php echo get_permalink(); ?>" title="View our <?php the_title(); ?> product"><?php the_title(); ?></a></li>
+                            <?php endwhile; ?>
+                        </ul>
+                    <?php endif; ?>
+
                     <ul class="sub-nav recipes">
                         <li><a href="<?php echo get_site_url(); ?>/recipes" title="View all our recipes">All</a></li>
                         <li><a href="<?php echo get_site_url(); ?>/recipes/most-viewed" title="View our most viewed recipes">Most viewed</a></li>
-                        <li><a href="<?php echo get_site_url(); ?>/recipes/fish" title="View our fish recipes">Fish</a></li>
-                        <li><a href="<?php echo get_site_url(); ?>/recipes/meat" title="View our meat recipes">Meat</a></li>
+                        <li><a href="<?php echo get_site_url(); ?>/recipes?type=fish" title="View our fish recipes">Fish</a></li>
+                        <li><a href="<?php echo get_site_url(); ?>/recipes?type=meat" title="View our meat recipes">Meat</a></li>
                     </ul>
                 </div>
             </div>
