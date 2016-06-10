@@ -1026,6 +1026,16 @@ li.disabled {
 .shadow {
   box-shadow: 0 0 3px 2px #868686;
 }
+@media (max-width: 767px) {
+  .desktop {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+}
 html {
   font-size: 62.5%;
 }
@@ -1059,12 +1069,34 @@ nav#nav {
   background-repeat: repeat-x;
   transition: all 0.3s ease;
 }
+nav#nav .open-nav {
+  line-height: 38px;
+}
 nav#nav ul {
   display: inline-block;
+}
+@media (max-width: 767px) {
+  nav#nav ul {
+    display: none;
+    position: absolute;
+    top: 38px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 9999px;
+    z-index: 999;
+    background: #222222;
+  }
 }
 nav#nav ul li {
   display: inline-block;
   margin-right: 10px;
+}
+@media (max-width: 767px) {
+  nav#nav ul li {
+    display: block;
+    margin: 0;
+  }
 }
 nav#nav ul li:last-child {
   margin-right: 0;
@@ -1074,15 +1106,22 @@ nav#nav ul li:not(.home):focus,
 nav#nav ul li:not(.home).active {
   background: #2369be;
 }
-nav#nav ul li.home {
-  position: absolute;
-  top: -4px;
-  left: 70px;
-  width: 73px;
-  height: 59px;
-  background-image: url('img/nav-selected.png');
-  background-repeat: no-repeat;
-  z-index: 99;
+@media (min-width: 768px) {
+  nav#nav ul li.home {
+    position: absolute;
+    top: -4px;
+    left: 70px;
+    width: 73px;
+    height: 59px;
+    background-image: url('img/nav-selected.png');
+    background-repeat: no-repeat;
+    z-index: 99;
+  }
+}
+@media (min-width: 768px) and (max-width: 990px), (min-width: 991px) and (max-width: 1279px) {
+  nav#nav ul li.home {
+    left: 50px;
+  }
 }
 nav#nav ul li.home a {
   line-height: 46px;
@@ -1093,6 +1132,18 @@ nav#nav ul li a {
   font-size: 2.05rem;
   text-transform: uppercase;
   line-height: 38px;
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  nav#nav ul li a {
+    padding: 0 5px;
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 991px) and (max-width: 1279px) {
+  nav#nav ul li a {
+    padding: 0 5px;
+    font-size: 1.75rem;
+  }
 }
 nav#nav ul li a:hover,
 nav#nav ul li a:focus {
@@ -1124,6 +1175,9 @@ main {
 body.home main {
   margin: 0;
 }
+body.single-ec_product main {
+  margin-top: 0;
+}
 footer#footer {
   padding: 15px 0;
   background-image: url('img/testimonial-bg.jpg');
@@ -1138,6 +1192,7 @@ footer#footer .copyright {
   position: relative;
   background-image: url('img/story-bg.jpg');
   background-repeat: repeat-x;
+  background-size: cover;
 }
 #story-hero .hero-text {
   position: absolute;
@@ -1146,6 +1201,12 @@ footer#footer .copyright {
   right: 0;
   width: 100%;
   opacity: 0;
+}
+@media (max-width: 767px) {
+  #story-hero .hero-text {
+    left: 7%;
+    width: 86%;
+  }
 }
 #story-hero .hero-text img {
   margin: auto;
@@ -1158,6 +1219,11 @@ footer#footer .copyright {
 #promos .promo {
   position: relative;
   opacity: 0;
+}
+@media (max-width: 767px) {
+  #promos .promo {
+    margin-bottom: 20px;
+  }
 }
 #promos .promo.coming-soon,
 #promos .promo.featured-recipe {
@@ -1197,6 +1263,7 @@ footer#footer .copyright {
   text-transform: uppercase;
 }
 #get-in-touch {
+  display: none;
   padding: 38px 0 0 0;
   font-family: "VeneerThree";
   background-image: url('img/crumpled-paper-bg.jpg');
@@ -1391,6 +1458,9 @@ footer#footer .copyright {
 #view-recipes {
   float: left;
   width: 178px;
+}
+.product {
+  margin-top: 47px;
 }
 #product-ingredients {
   float: right;

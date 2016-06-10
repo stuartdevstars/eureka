@@ -67,3 +67,15 @@
 .shadow {
 	box-shadow: 0 0 3px 2px #868686;
 }
+
+.desktop {
+	@media @phablet {
+		display: none;
+	}
+}
+
+.mobile {
+	@media @tablet-up {
+		display: none;
+	}
+}

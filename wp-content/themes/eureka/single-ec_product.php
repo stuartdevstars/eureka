@@ -4,6 +4,9 @@
 
 <?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
+		<?php $banner_image = get_field('product_banner_image'); ?>
+
+		<img src="<?php echo $banner_image['url']; ?>" alt="<?php the_title(); ?>" class="img-responsive">
 		<div class="product" itemscope="" itemtype="http://schema.org/Product">
 			<div class="container">
 				<div class="row">

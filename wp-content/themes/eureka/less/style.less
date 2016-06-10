@@ -19,6 +19,7 @@ Tags:
 	position: relative;
 	background-image: url('img/story-bg.jpg');
 	background-repeat: repeat-x;
+	background-size: cover;
 
 	.hero-text {
 		position: absolute;
@@ -27,6 +28,11 @@ Tags:
 		right: 0;
 		width: 100%;
 		opacity: 0;
+
+		@media @phablet {
+			left: 7%;
+			width: 86%;
+		}
 
 		img {
 			margin: auto;
@@ -42,6 +48,10 @@ Tags:
 	.promo {
 		position: relative;
 		opacity: 0;
+
+		@media @phablet {
+			margin-bottom: 20px;
+		}
 
 		&.coming-soon, &.featured-recipe {
 			box-shadow: 0 0 3px 2px #868686;
@@ -88,6 +98,7 @@ Tags:
 }
 
 #get-in-touch {
+	display: none;
 	padding: 38px 0 0 0;
 	font-family: "VeneerThree";
 	background-image: url('img/crumpled-paper-bg.jpg');
@@ -316,6 +327,10 @@ Tags:
 #view-recipes {
 	float: left;
 	width: 178px;
+}
+
+.product {
+	margin-top: 47px;
 }
 
 #product-ingredients {

@@ -8,7 +8,7 @@ Template Name: Where to buy
 
 <div class="container">
 	<div class="row">
-		<div class="col-sm-9">
+		<div class="col-sm-10">
 			<?php if (have_posts()) : ?>
 				<?php while (have_posts()) : the_post(); ?>
 					<section id="buy-info">
@@ -85,9 +85,11 @@ Template Name: Where to buy
 				<?php endwhile; ?>
 			<?php endif; ?>
 		</div>
-		<aside class="col-sm-3">
-			<img src="<?php echo get_template_directory_uri(); ?>/img/buy-online-sidebar.jpg" alt="Buy online.  Coming soon" class="img-responsive">
-			<img src="<?php echo get_template_directory_uri(); ?>/img/view-recipes-sidebar.jpg" alt="Buy online.  Coming soon" class="img-responsive">
+		<aside class="col-sm-2">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/buy-online-sidebar.jpg" alt="Buy online.  Coming soon" class="img-responsive center-block" style="margin-bottom: 30px;">
+			<div class="shadow center-block">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/view-recipes-sidebar.jpg" alt="Buy online.  Coming soon" class="img-responsive">
+			</div>
 		</aside>
 	</div>
 </div>

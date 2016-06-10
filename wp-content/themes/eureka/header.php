@@ -23,6 +23,10 @@
     <link rel="canonical" href="">
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 
+    <script type="text/javascript">
+    var base_url = "<?php echo get_template_directory_uri(); ?>";
+    </script>
+
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -31,9 +35,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <a href="<?php echo get_site_url(); ?>" title="View <?php bloginfo('name'); ?> home page">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/header.png" alt="Eureka Cove - Bringing tasty treasures home" class="img-responsive" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/header.png" alt="Eureka Cove - Bringing tasty treasures home" class="img-responsive desktop" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/header-mobile.png" alt="Eureka Cove - Bringing tasty treasures home" class="img-responsive mobile" />
                     </a>
-                    <div class="social">
+                    <div class="social desktop">
                         <a href="https://www.facebook.com" title="Like Eureka Cove on Facebook"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/facebook.svg" alt="Facebook logo" width="18"></a>
                         <a href="https://www.twitter.com" title="Follow Eureka Cove on Twitter"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/twitter.svg" alt="Twitter logo" width="18"></a>
                         <a href="https://www.instagram.com" title="Follow Eureka Cove on Instagram"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/instagram.svg" alt="Instagram logo" width="18"></a>
@@ -47,6 +52,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    <a class="open-nav pull-right mobile"><img src="<?php echo get_template_directory_uri(); ?>/img/menu.svg" alt="Menu open"></a>
                     <ul>
                         <li class="home">
                             <a href="<?php echo get_site_url(); ?>" title="Go to the Eureka Cove home page">Home</a>
