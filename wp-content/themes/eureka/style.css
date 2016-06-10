@@ -1216,12 +1216,18 @@ footer#footer .copyright {
   padding: 10px 0;
   box-shadow: 0 0 3px 2px #868686;
 }
+@media (max-width: 767px) {
+  #promos {
+    text-align: center;
+  }
+}
 #promos .promo {
   position: relative;
   opacity: 0;
 }
 @media (max-width: 767px) {
   #promos .promo {
+    display: inline-block;
     margin-bottom: 20px;
   }
 }
