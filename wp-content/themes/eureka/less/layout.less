@@ -12,6 +12,10 @@ body {
 	font-size: 15px;
 	line-height: 1;
 	background-color: #e5e5e5;
+
+	&.nav-open {
+		overflow: hidden;
+	}
 }
 
 header#header {
@@ -30,7 +34,7 @@ header#header {
 
 nav#nav {
 	min-height: 38px;
-	font-family: "VeneerThree";
+	font-family: "Oswald";
 	text-align: center;
 	background-image: url('img/nav-bg.jpg');
 	background-repeat: repeat-x;
@@ -98,18 +102,19 @@ nav#nav {
 			a {
 				padding: 0 10px;
 				color: #ffffff;
-				font-size: 2.05rem;
+				font-size: 1.8rem;
+				font-weight: bold;
 				text-transform: uppercase;
 				line-height: 38px;
 
 				@media @tablet {
 					padding: 0 5px;
-					font-size: 1.5rem;
+					font-size: 1.3rem;
 				}
 
 				@media @laptop {
 					padding: 0 5px;
-					font-size: 1.75rem;
+					font-size: 1.5rem;
 				}
 
 				&:hover, &:focus {
@@ -143,6 +148,14 @@ nav#nav {
 				color: #ac1f2d;
 				font-family: "BrandonGrotesque-Medium", sans-serif;
 				font-size: 1.5rem;
+
+				@media @tablet {
+					font-size: 1.3rem;
+				}
+
+				@media @laptop {
+					font-size: 1.4rem;
+				}
 			}
 		}
 	}
@@ -160,14 +173,48 @@ main {
 	}
 }
 
+body.page .content {
+	padding: 10px;
+	background-image: url('img/crumpled-paper-bg.jpg');
+}
+
 footer#footer {
 	padding: 15px 0;
+	color: #999999;
 	background-image: url('img/testimonial-bg.jpg');
 	background-repeat: repeat;
+
+	.get-in-touch-mobile {
+		margin: 20px 0;
+		padding: 0 10px;
+		color: #ffffff;
+		font-family: "Oswald";
+		font-size: 2.05rem;
+		line-height: 38px;
+		background: #222222;
+		box-shadow: 0 0 1px 1px #868686;
+		overflow: hidden;
+
+		h4 {
+			margin: 0;
+		}
+	}
+
+	.social a {
+		margin: 0 10px;
+	}
 
 	.copyright {
 		margin-top: 10px;
 		padding-top: 10px;
 		border-top: 8px solid #e7e7e7;
+	}
+
+	span, a {
+		color: #999999;
+
+		@media @phablet {
+			display: block;
+		}
 	}
 }

@@ -52,9 +52,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-9">
-				<p><span>Welcome to Eureka! Cove.</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Want more? <a href="" title="Read our full story here">Read our full story here</a></p>
+				<p><span>Welcome to Eureka! Cove.</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Want more? <a href="<?php echo get_site_url(); ?>/our-story" title="Read our full story here">Read our full story here</a></p>
 			</div>
-			<div class="col-sm-3">
+			<div class="col-sm-3 text-center">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/free-from.png" alt="Free From Gluten and Diary logo">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/kosher.png" alt="Kosher logo">
 			</div>
 		</div>
 	</div>

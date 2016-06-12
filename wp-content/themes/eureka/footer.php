@@ -1,14 +1,33 @@
 	</main>
 	
 	<footer id="footer">
+		<div class="get-in-touch-mobile hidden-sm hidden-md hidden-lg">
+			<h4 class="pull-left">Get in touch with us</h4>
+			<a href="" class="pull-right"><img src="<?php echo get_template_directory_uri(); ?>/img/plus.svg" alt="Open"></a>
+		</div>
+
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-12">
+				<div class="col-sm-12 text-center">
+					<div class="social hidden-sm hidden-md hidden-lg">
+                        <a href="https://www.facebook.com" title="Like Eureka Cove on Facebook"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/facebook.svg" alt="Facebook logo" width="18"></a>
+                        <a href="https://www.twitter.com" title="Follow Eureka Cove on Twitter"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/twitter.svg" alt="Twitter logo" width="18"></a>
+                        <a href="https://www.instagram.com" title="Follow Eureka Cove on Instagram"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/instagram.svg" alt="Instagram logo" width="18"></a>
+                        <a href="https://www.youtube.com" title="Subscribe to Eureka Cove on YouTube"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/youtube.svg" alt="YouTube logo" width="18"></a>
+                    </div>
 				</div>
 			</div>
+			<?php if(!is_home()): ?>
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/free-from.png" alt="Free From Gluten and Diary logo">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/kosher.png" alt="Kosher logo">
+					</div>
+				</div>
+			<?php endif; ?>
 		</div>
 		<section class="copyright">
-			<div class="text-center">&copy; Eureka! Cove  |  Terms &amp; Conditions  |  Privacy Policy  |  Site by feel</div>
+			<div class="text-center"><span>&copy; Eureka! Cove</span>  <span class="hidden-xs">|</span>  <a href="<?php echo get_site_url(); ?>/terms-and-conditions">Terms &amp; Conditions</a>  <span class="hidden-xs">|</span>  <a href="<?php echo get_site_url(); ?>/privacy-policy">Privacy Policy</a>  <span class="hidden-xs">|</span>  <span>Site by feel</span></div>
 		</section>
 	</footer>
 

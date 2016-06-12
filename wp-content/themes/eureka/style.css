@@ -303,6 +303,11 @@ hr {
     width: 750px;
   }
 }
+@media (min-width: 991px) {
+  .container {
+    width: 980px;
+  }
+}
 @media (min-width: 1280px) {
   .container {
     width: 1105px;
@@ -929,6 +934,213 @@ hr {
 .affix {
   position: fixed;
 }
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg {
+  display: none !important;
+}
+.visible-xs-block,
+.visible-xs-inline,
+.visible-xs-inline-block,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  .visible-xs {
+    display: block !important;
+  }
+  table.visible-xs {
+    display: table !important;
+  }
+  tr.visible-xs {
+    display: table-row !important;
+  }
+  th.visible-xs,
+  td.visible-xs {
+    display: table-cell !important;
+  }
+}
+@media (max-width: 767px) {
+  .visible-xs-block {
+    display: block !important;
+  }
+}
+@media (max-width: 767px) {
+  .visible-xs-inline {
+    display: inline !important;
+  }
+}
+@media (max-width: 767px) {
+  .visible-xs-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-sm {
+    display: block !important;
+  }
+  table.visible-sm {
+    display: table !important;
+  }
+  tr.visible-sm {
+    display: table-row !important;
+  }
+  th.visible-sm,
+  td.visible-sm {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-sm-block {
+    display: block !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-sm-inline {
+    display: inline !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-sm-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1279px) {
+  .visible-md {
+    display: block !important;
+  }
+  table.visible-md {
+    display: table !important;
+  }
+  tr.visible-md {
+    display: table-row !important;
+  }
+  th.visible-md,
+  td.visible-md {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1279px) {
+  .visible-md-block {
+    display: block !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1279px) {
+  .visible-md-inline {
+    display: inline !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1279px) {
+  .visible-md-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (min-width: 1280px) {
+  .visible-lg {
+    display: block !important;
+  }
+  table.visible-lg {
+    display: table !important;
+  }
+  tr.visible-lg {
+    display: table-row !important;
+  }
+  th.visible-lg,
+  td.visible-lg {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 1280px) {
+  .visible-lg-block {
+    display: block !important;
+  }
+}
+@media (min-width: 1280px) {
+  .visible-lg-inline {
+    display: inline !important;
+  }
+}
+@media (min-width: 1280px) {
+  .visible-lg-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1279px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1280px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+.visible-print {
+  display: none !important;
+}
+@media print {
+  .visible-print {
+    display: block !important;
+  }
+  table.visible-print {
+    display: table !important;
+  }
+  tr.visible-print {
+    display: table-row !important;
+  }
+  th.visible-print,
+  td.visible-print {
+    display: table-cell !important;
+  }
+}
+.visible-print-block {
+  display: none !important;
+}
+@media print {
+  .visible-print-block {
+    display: block !important;
+  }
+}
+.visible-print-inline {
+  display: none !important;
+}
+@media print {
+  .visible-print-inline {
+    display: inline !important;
+  }
+}
+.visible-print-inline-block {
+  display: none !important;
+}
+@media print {
+  .visible-print-inline-block {
+    display: inline-block !important;
+  }
+}
+@media print {
+  .hidden-print {
+    display: none !important;
+  }
+}
 @font-face {
   font-family: "BrandonGrotesque-Medium";
   src: url("fonts/BrandonGrotesque-Medium.otf") format("opentype");
@@ -936,14 +1148,6 @@ hr {
 @font-face {
   font-family: "BrandonGrotesque-RegularItalic";
   src: url("fonts/BrandonGrotesque-RegularItalic.otf") format("opentype");
-}
-@font-face {
-  font-family: "VeneerThree";
-  src: url("fonts/VeneerThree.otf") format("opentype");
-}
-@font-face {
-  font-family: "NexaRust";
-  src: url("fonts/NexaRust.otf") format("opentype");
 }
 @font-face {
   font-family: "Kent4FPrinted";
@@ -1050,6 +1254,9 @@ body {
   line-height: 1;
   background-color: #e5e5e5;
 }
+body.nav-open {
+  overflow: hidden;
+}
 header#header {
   background-image: url('img/header-bg.jpg');
 }
@@ -1063,7 +1270,7 @@ header#header .social a {
 }
 nav#nav {
   min-height: 38px;
-  font-family: "VeneerThree";
+  font-family: "Oswald";
   text-align: center;
   background-image: url('img/nav-bg.jpg');
   background-repeat: repeat-x;
@@ -1129,20 +1336,21 @@ nav#nav ul li.home a {
 nav#nav ul li a {
   padding: 0 10px;
   color: #ffffff;
-  font-size: 2.05rem;
+  font-size: 1.8rem;
+  font-weight: bold;
   text-transform: uppercase;
   line-height: 38px;
 }
 @media (min-width: 768px) and (max-width: 990px) {
   nav#nav ul li a {
     padding: 0 5px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 @media (min-width: 991px) and (max-width: 1279px) {
   nav#nav ul li a {
     padding: 0 5px;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
 nav#nav ul li a:hover,
@@ -1169,6 +1377,16 @@ nav#nav ul.sub-nav a {
   font-family: "BrandonGrotesque-Medium", sans-serif;
   font-size: 1.5rem;
 }
+@media (min-width: 768px) and (max-width: 990px) {
+  nav#nav ul.sub-nav a {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 991px) and (max-width: 1279px) {
+  nav#nav ul.sub-nav a {
+    font-size: 1.4rem;
+  }
+}
 main {
   margin: 47px 0;
 }
@@ -1178,15 +1396,47 @@ body.home main {
 body.single-ec_product main {
   margin-top: 0;
 }
+body.page .content {
+  padding: 10px;
+  background-image: url('img/crumpled-paper-bg.jpg');
+}
 footer#footer {
   padding: 15px 0;
+  color: #999999;
   background-image: url('img/testimonial-bg.jpg');
   background-repeat: repeat;
+}
+footer#footer .get-in-touch-mobile {
+  margin: 20px 0;
+  padding: 0 10px;
+  color: #ffffff;
+  font-family: "Oswald";
+  font-size: 2.05rem;
+  line-height: 38px;
+  background: #222222;
+  box-shadow: 0 0 1px 1px #868686;
+  overflow: hidden;
+}
+footer#footer .get-in-touch-mobile h4 {
+  margin: 0;
+}
+footer#footer .social a {
+  margin: 0 10px;
 }
 footer#footer .copyright {
   margin-top: 10px;
   padding-top: 10px;
   border-top: 8px solid #e7e7e7;
+}
+footer#footer span,
+footer#footer a {
+  color: #999999;
+}
+@media (max-width: 767px) {
+  footer#footer span,
+  footer#footer a {
+    display: block;
+  }
 }
 #story-hero {
   position: relative;
@@ -1271,17 +1521,19 @@ footer#footer .copyright {
 #get-in-touch {
   display: none;
   padding: 38px 0 0 0;
-  font-family: "VeneerThree";
+  font-family: "Oswald";
+  font-size: 1.4rem;
+  text-transform: uppercase;
   background-image: url('img/crumpled-paper-bg.jpg');
   background-repeat: repeat-x;
 }
 #get-in-touch h4 {
   margin: 0 0 10px 0;
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 #get-in-touch h5 {
   margin: 0 0 10px 0;
-  font-size: 1.9rem;
+  font-size: 1.7rem;
 }
 #get-in-touch hr {
   margin: 0 0 25px 0;
@@ -1391,14 +1643,15 @@ footer#footer .copyright {
 #buy-info .store-info .store .products h4 {
   margin: 0 0 10px 0;
   color: #302c2d;
-  font-family: "NexaRust";
-  font-size: 2.5rem;
-  font-weight: 100;
-  line-height: 2.5rem;
+  font-family: "Oswald";
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.6rem;
 }
 #buy-info .store-info .store .products h4 span {
   display: block;
-  margin-top: -15px;
+  margin-top: -8px;
   line-height: 1;
 }
 #buy-info .store-info .store .products h5 {
@@ -1429,6 +1682,11 @@ footer#footer .copyright {
   font-size: 1.8rem;
   border: 2px solid #000000;
 }
+@media (max-width: 767px) {
+  #product-info {
+    margin-bottom: 30px;
+  }
+}
 #product-info .description,
 #product-info .map,
 #product-info .strapline,
@@ -1436,13 +1694,31 @@ footer#footer .copyright {
 #product-info .flavour {
   border: 2px solid #000000;
 }
+@media (min-width: 768px) and (max-width: 990px) {
+  #product-info div {
+    word-break: break-all;
+  }
+}
 #product-info div.left {
   float: left;
   width: 60%;
 }
+@media (max-width: 767px) {
+  #product-info div.left {
+    float: none;
+    width: 100%;
+  }
+}
 #product-info div.right {
   float: right;
   width: 40%;
+}
+@media (max-width: 767px) {
+  #product-info div.right {
+    clear: both;
+    float: none;
+    width: 100%;
+  }
 }
 #product-info div > div {
   float: left;
@@ -1474,14 +1750,21 @@ footer#footer .copyright {
   padding: 20px;
   background-image: url('img/crumpled-paper-bg.jpg');
 }
+@media (max-width: 1279px) {
+  #product-ingredients {
+    width: 100%;
+  }
+}
 #product-ingredients article {
   margin-bottom: 10px;
   border-bottom: 6px double #000000;
 }
 #product-ingredients article h4 {
   margin: 0 0 10px 0;
-  font-family: "VeneerThree";
-  font-size: 1.9rem;
+  font-family: "Kent4FPrintedShadowed";
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  text-transform: uppercase;
 }
 #product-ingredients article h4 a {
   float: right;
@@ -1489,9 +1772,11 @@ footer#footer .copyright {
   width: 24px;
   height: 24px;
   color: #ffffff;
-  font-size: 2.4rem;
+  font-family: "Oswald";
+  font-size: 3rem;
+  font-weight: normal;
   text-align: center;
-  line-height: 24px;
+  line-height: 18px;
   background: #2369be;
   border-radius: 50%;
 }
@@ -1518,9 +1803,22 @@ footer#footer .copyright {
   margin-right: 1%;
   margin-bottom: 2%;
 }
+@media (max-width: 767px) {
+  .recipes .recipe-box {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+}
 .recipes .recipe-box.featured {
   position: relative;
   width: 58%;
+  padding-bottom: 45px;
+}
+@media (max-width: 767px) {
+  .recipes .recipe-box.featured {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
 }
 .recipes .recipe-box.featured > div:first-child {
   width: 42%;
@@ -1544,15 +1842,18 @@ footer#footer .copyright {
 .recipes .recipe-box.featured .disabled {
   color: #888888;
 }
-.recipes .recipe-box.featured .btn {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
+@media (min-width: 768px) {
+  .recipes .recipe-box.featured .btn {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
 }
 .recipe-box h4 {
   margin: 10px 0;
-  font-family: "VeneerThree";
-  font-size: 1.7rem;
+  font-family: "Oswald";
+  font-size: 1.5rem;
+  text-transform: uppercase;
 }
 .recipe-box h4 a {
   color: #222222;
@@ -1570,7 +1871,8 @@ footer#footer .copyright {
 }
 .recipe .recipe-overview header {
   width: 75%;
-  font-family: "VeneerThree";
+  font-family: "Oswald";
+  text-transform: uppercase;
 }
 .recipe .recipe-overview h2 {
   margin: 0;
@@ -1583,7 +1885,8 @@ footer#footer .copyright {
 }
 .recipe .recipe-overview ul {
   margin-bottom: 10px;
-  font-size: 1.8rem;
+  font-size: 1.3rem;
+  font-weight: bold;
   overflow: hidden;
 }
 .recipe .recipe-overview li {
@@ -1591,8 +1894,8 @@ footer#footer .copyright {
   display: inline-block;
 }
 .recipe .recipe-overview li:not(:last-child) {
-  margin-right: 10px;
-  padding-right: 10px;
+  margin-right: 7px;
+  padding-right: 7px;
   border-right: 2px solid #000000;
 }
 .recipe .recipe-detail {
@@ -1608,8 +1911,9 @@ footer#footer .copyright {
 }
 .recipe .recipe-detail section header h3 {
   margin: 0;
-  font-family: "VeneerThree";
+  font-family: "Oswald";
   font-size: 1.9rem;
+  text-transform: uppercase;
 }
 .recipe .recipe-detail section header h3 a {
   float: right;
@@ -1617,9 +1921,11 @@ footer#footer .copyright {
   width: 24px;
   height: 24px;
   color: #ffffff;
-  font-size: 2.4rem;
+  font-family: "Oswald";
+  font-size: 3rem;
+  font-weight: normal;
   text-align: center;
-  line-height: 24px;
+  line-height: 18px;
   background: #2369be;
   border-radius: 50%;
 }

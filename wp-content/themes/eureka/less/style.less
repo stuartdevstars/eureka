@@ -105,18 +105,20 @@ Tags:
 #get-in-touch {
 	display: none;
 	padding: 38px 0 0 0;
-	font-family: "VeneerThree";
+	font-family: "Oswald";
+	font-size: 1.4rem;
+	text-transform: uppercase;
 	background-image: url('img/crumpled-paper-bg.jpg');
 	background-repeat: repeat-x;
 
 	h4 {
 		margin: 0 0 10px 0;
-		font-size: 2.2rem;
+		font-size: 2rem;
 	}
 
 	h5 {
 		margin: 0 0 10px 0;
-		font-size: 1.9rem;
+		font-size: 1.7rem;
 	}
 
 	hr {
@@ -242,14 +244,15 @@ Tags:
 				h4 {
 					margin: 0 0 10px 0;
 					color: #302c2d;
-					font-family: "NexaRust";
-					font-size: 2.5rem;
-					font-weight: 100;
-					line-height: 2.5rem;
+					font-family: "Oswald";
+					font-size: 1.6rem;
+					font-weight: bold;
+					text-transform: uppercase;
+					line-height: 1.6rem;
 
 					span {
 						display: block;
-						margin-top: -15px;
+						margin-top: -8px;
 						line-height: 1;
 					}
 				}
@@ -293,19 +296,38 @@ Tags:
 	font-size: 1.8rem;
 	border: 2px solid #000000;
 
+	@media @phablet {
+		margin-bottom: 30px;
+	}
+
 	.description, .map, .strapline, .sourced, .flavour {
 		border: 2px solid #000000;
 	}
 
 	div {
+		@media @tablet {
+			word-break: break-all;
+		}
+
 		&.left {
 			float: left;
 			width: 60%;
+
+			@media @phablet {
+				float: none;
+				width: 100%;
+			}
 		}
 
 		&.right {
 			float: right;
 			width: 40%;
+
+			@media @phablet {
+				clear: both;
+				float: none;
+				width: 100%;
+			}
 		}
 
 		> div {
@@ -344,14 +366,20 @@ Tags:
 	padding: 20px;
 	background-image: url('img/crumpled-paper-bg.jpg');
 
+	@media @laptop-down {
+		width: 100%;
+	}
+
 	article {
 		margin-bottom: 10px;
 		border-bottom: 6px double #000000;
 
 		h4 {
 			margin: 0 0 10px 0;
-			font-family: "VeneerThree";
-			font-size: 1.9rem;
+			font-family: "Kent4FPrintedShadowed";
+			font-size: 1.6rem;
+			line-height: 2.4rem;
+			text-transform: uppercase;
 
 			a {
 				float: right;
@@ -359,9 +387,11 @@ Tags:
 				width: 24px;
 				height: 24px;
 				color: #ffffff;
-				font-size: 2.4rem;
+				font-family: "Oswald";
+				font-size: 3rem;
+				font-weight: normal;
 				text-align: center;
-				line-height: 24px;
+				line-height: 18px;
 				background: @primary-colour;
 				border-radius: 50%;
 
@@ -394,11 +424,22 @@ Tags:
 		margin-left: 1%;
 		margin-right: 1%;
 		margin-bottom: 2%;
+
+		@media @phablet {
+			width: 100%;
+			margin: 0 0 20px 0;
+		}
 	}
 
 	.recipes &.featured {
 		position: relative;
 		width: 58%;
+		padding-bottom: 45px;
+
+		@media @phablet {
+			width: 100%;
+			margin: 0 0 20px 0;
+		}
 
 		> div:first-child {
 			width: 42%;
@@ -428,16 +469,19 @@ Tags:
 		}
 
 		.btn {
-			position: absolute;
-			right: 10px;
-			bottom: 10px;
+			@media @tablet-up {
+				position: absolute;
+				right: 10px;
+				bottom: 10px;
+			}
 		}
 	}
 
 	h4 {
 		margin: 10px 0;
-		font-family: "VeneerThree";
-		font-size: 1.7rem;
+		font-family: "Oswald";
+		font-size: 1.5rem;
+		text-transform: uppercase;
 
 		a {
 			color: #222222;
@@ -460,7 +504,8 @@ Tags:
 
 		header {
 			width: 75%;
-			font-family: "VeneerThree";
+			font-family: "Oswald";
+			text-transform: uppercase;
 		}
 
 		h2 {
@@ -476,7 +521,8 @@ Tags:
 
 		ul {
 			margin-bottom: 10px;
-			font-size: 1.8rem;
+			font-size: 1.3rem;
+			font-weight: bold;
 			overflow: hidden;
 		}
 
@@ -485,8 +531,8 @@ Tags:
 			display: inline-block;
 
 			&:not(:last-child) {
-				margin-right: 10px;
-				padding-right: 10px;
+				margin-right: 7px;
+				padding-right: 7px;
 				border-right: 2px solid #000000;
 			}
 		}
@@ -507,8 +553,9 @@ Tags:
 			header {
 				h3 {
 					margin: 0;
-					font-family: "VeneerThree";
+					font-family: "Oswald";
 					font-size: 1.9rem;
+					text-transform: uppercase;
 
 					a {
 						float: right;
@@ -516,9 +563,11 @@ Tags:
 						width: 24px;
 						height: 24px;
 						color: #ffffff;
-						font-size: 2.4rem;
+						font-family: "Oswald";
+						font-size: 3rem;
+						font-weight: normal;
 						text-align: center;
-						line-height: 24px;
+						line-height: 18px;
 						background: @primary-colour;
 						border-radius: 50%;
 

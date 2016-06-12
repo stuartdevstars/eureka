@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 
-<?php $recipe_meta = get_post_custom(); ?>
-<?php $dietary_information = unserialize($recipe_meta['dietary_information'][0]); ?>
-
 <?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
+		<?php $recipe_meta = get_post_custom(); ?>
+		<?php $dietary_information = unserialize($recipe_meta['dietary_information'][0]); ?>
 		<?php $image = get_field('recipe_image'); ?>
 		<?php $featured = get_field('featured_recipe'); ?>
+		
 		<div class="recipe" itemscope="" itemtype="http://schema.org/Recipe">
 			<div class="container">
 				<div class="row">
@@ -21,10 +21,18 @@
 								<div itemprop="description" class="sr-only"><?php the_content(); ?></div>
 								<hr />
 								<ul>
-									<li>Fish</li>
-									<li>Serves: <?php echo $recipe_meta['recipe_serves'][0]; ?></li>
-									<li>Prep-time: <time datetime="PT30M" itemprop="prepTime"><?php echo $recipe_meta['recipe_prep_time'][0]; ?></time></li>
-									<li>Cooking time: <time datetime="PT2H" itemprop="cookTime"><?php echo $recipe_meta['recipe_cooking_time'][0]; ?></time></li>
+									<?php if(!empty($recipe_meta['recipe_type'])): ?>
+										<li><?php echo $recipe_meta['recipe_type'][0]; ?></li>
+									<?php endif; ?>
+									<?php if(!empty($recipe_meta['recipe_serves'])): ?>
+										<li>Serves: <?php echo $recipe_meta['recipe_serves'][0]; ?></li>
+									<?php endif; ?>
+									<?php if(!empty($recipe_meta['recipe_prep_time'])): ?>
+										<li>Prep-time: <time datetime="PT<?php echo strtoupper($recipe_meta['recipe_prep_time'][0]); ?>" itemprop="prepTime"><?php echo $recipe_meta['recipe_prep_time'][0]; ?></time></li>
+									<?php endif; ?>
+									<?php if(!empty($recipe_meta['recipe_cooking_time'])): ?>
+										<li>Cooking time: <time datetime="PT<?php echo strtoupper($recipe_meta['recipe_prep_time'][0]); ?>" itemprop="cookTime"><?php echo $recipe_meta['recipe_cooking_time'][0]; ?></time></li>
+									<?php endif; ?>
 								</ul>
 							</header>
 							<img src="<?php echo $image['sizes']['large']; ?>" class="img-responsive" itemprop="image">
@@ -66,7 +74,7 @@
 						</article>
 					</div>
 					<div class="col-sm-2">
-						<a href="" title="See our fish products">
+						<a href="" title="See our fish products" style="display: block; margin-bottom: 20px;">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/fish-products-sidebar.jpg" alt="See our fish products" class="img-responsive">
 						</a>
 						<article class="recipe-box text-center shadow">

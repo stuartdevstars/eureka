@@ -76,7 +76,7 @@ if(isset($_GET['type']) && $_GET['type']) {
 					</div>
 				<?php else: ?>
 					<a href="<?php echo get_permalink(); ?>" title="View full recipe">
-						<img src="<?php echo $image['sizes']['medium']; ?>" alt="Recipe image" class="img-responsive">
+						<img src="<?php echo $image['sizes']['medium']; ?>" alt="Recipe image" class="img-responsive center-block">
 					</a>
 					<h4><a href="<?php echo get_permalink(); ?>" title="View full recipe"><?php the_title();?></a></h4>
 					<a href="<?php echo get_permalink(); ?>" class="btn btn-primary" title="View full recipe">Full recipe</a>

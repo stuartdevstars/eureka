@@ -10,7 +10,7 @@
 		<div class="product" itemscope="" itemtype="http://schema.org/Product">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-6">
+					<div class="col-sm-7 col-md-6">
 						<section id="product-info" class="clearfix">
 							<div class="left">
 								<div class="map">
@@ -23,8 +23,8 @@
 							<div class="right description" itemprop="description"><?php the_content(); ?></div>
 						</section>
 					</div>
-					<div class="col-sm-6">
-						<a href="<?php echo get_site_url(); ?>/recipes" title="View our recipes">
+					<div class="col-sm-5 col-md-6">
+						<a href="<?php echo get_site_url(); ?>/recipes" title="View our recipes" class="hidden-xs hidden-sm hidden-md">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/view-recipes-sidebar.jpg" alt="Buy online.  Coming soon" id="view-recipes" class="shadow img-responsive">
 						</a>
 						<section id="product-ingredients" class="shadow">
