@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
-<?php $product_meta = get_post_custom(); ?>
-
 <?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
+		<?php $product_meta = get_post_custom(); ?>
 		<?php $banner_image = get_field('product_banner_image'); ?>
+		<?php $sourced_from_map = get_field('sourced_from_map'); ?>
 
 		<img src="<?php echo $banner_image['url']; ?>" alt="<?php the_title(); ?>" class="img-responsive">
 		<div class="product" itemscope="" itemtype="http://schema.org/Product">
@@ -14,11 +14,11 @@
 						<section id="product-info" class="clearfix">
 							<div class="left">
 								<div class="map">
-									<img src="<?php echo get_template_directory_uri(); ?>/img/product-map.jpg" alt="Product map" class="img-responsive">
+									<img src="<?php echo $sourced_from_map['url']; ?>" alt="Sourced from map" class="img-responsive">
 								</div>
 								<div class="strapline" itemprop="name"><?php the_title(); ?></div>
-								<div class="sourced">Responsibly sourced in holland</div>
-								<div class="flavour">Lightly spiced <img src="<?php echo get_template_directory_uri(); ?>/img/chilli.png" alt="Chilli"></div>
+								<div class="sourced"><?php the_field('sourced_from_text');?></div>
+								<div class="flavour"><?php the_field('level_of_spice');?> <img src="<?php echo get_template_directory_uri(); ?>/img/chilli.png" alt="Chilli"></div>
 							</div>
 							<div class="right description" itemprop="description"><?php the_content(); ?></div>
 						</section>
@@ -33,9 +33,7 @@
 									<h4 class="clearfix">Ingredients <a href="">-</a></h4>
 								</header>
 								<div class="content">
-								<?php if(!empty($product_meta['product_ingredients'])): ?>
-									<?php echo $product_meta['product_ingredients'][0]; ?>
-								<?php endif; ?>
+									<?php the_field('product_ingredients'); ?>
 								</div>
 							</article>
 							<article itemprop="nutrition" itemscope="" itemtype="http://schema.org/NutritionInformation">
@@ -43,9 +41,7 @@
 									<h4 class="clearfix">Nutritional information <a href="">+</a></h4>
 								</header>
 								<div class="content">
-								<?php if(!empty($product_meta['product_nutritional_information'])): ?>
-									<?php echo $product_meta['product_nutritional_information'][0]; ?>
-								<?php endif; ?>
+									<?php the_field('product_nutritional_information'); ?>
 								</div>
 								<!--<p itemprop="calories">596</p>
 								<p itemprop="proteinContent">41g</p>
@@ -57,9 +53,7 @@
 									<h4 class="clearfix">Where to buy <a href="">+</a></h4>
 								</header>
 								<div class="content">
-								<?php if(!empty($product_meta['product_where_to_buy'])): ?>
-									<?php echo $product_meta['product_where_to_buy'][0]; ?>
-								<?php endif; ?>
+									<?php the_field('where_to_buy'); ?>
 								</div>
 							</article>
 						</section>

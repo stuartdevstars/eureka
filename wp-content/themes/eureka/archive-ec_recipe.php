@@ -17,6 +17,7 @@ if(isset($_GET['type']) && $_GET['type']) {
 
 		<?php while ($loop->have_posts() ) : $loop->the_post(); ?>
 
+			<?php $type = get_field('recipe_type'); ?>
 			<?php $image = get_field('recipe_image'); ?>
 			<?php $featured = get_field('featured_recipe'); ?>
 
@@ -34,7 +35,13 @@ if(isset($_GET['type']) && $_GET['type']) {
 			<article class="recipe-box <?php if($featured):?>featured<?php else: ?>text-center<?php endif; ?> shadow">
 				<?php if($featured):?>
 					<div class="pull-left">
-						<a href="<?php echo get_permalink(); ?>" title="View full recipe">
+						<a href="<?php echo get_permalink(); ?>" title="View full recipe" class="img-holder">
+							<?php if($type == 'Fish'):?>
+								<img src="<?php echo get_template_directory_uri(); ?>/img/product-tabs/fish-tab.png" alt="Fish product" class="tab">
+							<?php endif; ?>
+							<?php if($type == 'Meat'):?>
+								<img src="<?php echo get_template_directory_uri(); ?>/img/product-tabs/meat-tab.png" alt="Meat product" class="tab">
+							<?php endif; ?>
 							<img src="<?php echo $image['sizes']['medium']; ?>" class="img-responsive">
 						</a>
 					</div>
@@ -75,7 +82,13 @@ if(isset($_GET['type']) && $_GET['type']) {
 						</div>
 					</div>
 				<?php else: ?>
-					<a href="<?php echo get_permalink(); ?>" title="View full recipe">
+					<a href="<?php echo get_permalink(); ?>" title="View full recipe" class="img-holder">
+						<?php if($type == 'Fish'):?>
+							<img src="<?php echo get_template_directory_uri(); ?>/img/product-tabs/fish-tab.png" alt="Fish product" class="tab">
+						<?php endif; ?>
+						<?php if($type == 'Meat'):?>
+							<img src="<?php echo get_template_directory_uri(); ?>/img/product-tabs/meat-tab.png" alt="Meat product" class="tab">
+						<?php endif; ?>
 						<img src="<?php echo $image['sizes']['medium']; ?>" alt="Recipe image" class="img-responsive center-block">
 					</a>
 					<h4><a href="<?php echo get_permalink(); ?>" title="View full recipe"><?php the_title();?></a></h4>

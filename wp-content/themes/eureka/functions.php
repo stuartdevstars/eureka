@@ -55,57 +55,10 @@ function create_post_types()
 
 add_action("admin_init", "admin_init");
 
-function admin_init(){
-	add_meta_box("product-ingredients", "Product ingredients", "add_product_ingredients", "ec_product", "normal", "low");
-	add_meta_box("product-nutritional-information", "Product nutritional information", "add_product_nutritional_information", "ec_product", "normal", "low");
-	add_meta_box("product-where-to-buy", "Where to buy", "add_product_where_to_buy", "ec_product", "normal", "low");
-
-	add_meta_box("recipe-details-meta", "Recipe details", "add_recipe_meta", "ec_recipe", "normal", "low");
+function admin_init() {
 	add_meta_box("recipe-dietary-meta", "Dietary information", "add_recipe_dietary_meta", "ec_recipe", "normal", "low");
 	add_meta_box("recipe-ingredients", "Ingredients", "add_recipe_ingredients", "ec_recipe", "normal", "low");
 	add_meta_box("recipe-method", "Method", "add_recipe_method", "ec_recipe", "normal", "low");
-	//add_meta_box("credits_meta", "Design &amp; Build Credits", "credits_meta", "portfolio", "normal", "low");
-}
- 
-function add_product_ingredients()
-{
-	global $post;
-	$product = get_post_custom($post->ID);
-	wp_editor(htmlspecialchars_decode($product["product_ingredients"][0]), 'product_ingredients', $settings = array('textarea_name'=>'product_ingredients'));
-}
-
-function add_product_nutritional_information()
-{
-	global $post;
-	$product = get_post_custom($post->ID);
-	wp_editor(htmlspecialchars_decode($product["product_nutritional_information"][0]), 'product_nutritional_information', $settings = array('textarea_name'=>'product_nutritional_information'));
-}
-
-function add_product_where_to_buy()
-{
-	global $post;
-	$product = get_post_custom($post->ID);
-	wp_editor(htmlspecialchars_decode($product["product_where_to_buy"][0]), 'product_where_to_buy', $settings = array('textarea_name'=>'product_where_to_buy'));
-}
-
-function add_recipe_meta()
-{
-	global $post;
-	$recipe = get_post_custom($post->ID);
-	?>
-	<div class="field">
-		<label>Serves:</label>
-		<input type="number" name="recipe_serves" value="<?php echo $recipe["recipe_serves"][0]; ?>" />
-	</div>
-	<div class="field">
-		<label>Prep time:</label>
-		<input type="text" name="recipe_prep_time" value="<?php echo $recipe["recipe_prep_time"][0]; ?>" />
-	</div>
-	<div class="field">
-		<label>Cooking time:</label>
-		<input type="text" name="recipe_cooking_time" value="<?php echo $recipe["recipe_cooking_time"][0]; ?>" />
-	</div>
-	<?php
 }
 
 function add_recipe_dietary_meta()
@@ -140,25 +93,12 @@ function add_recipe_method()
 	wp_editor(htmlspecialchars_decode($recipe["recipe_method"][0]), 'recipe_method', $settings = array('textarea_name'=>'recipe_method'));
 }
 
-add_action('save_post_ec_product', 'save_product');
 add_action('save_post_ec_recipe', 'save_recipe');
-
-function save_product()
-{
-	global $post;
-
-	update_post_meta($post->ID, "product_ingredients", $_POST["product_ingredients"]);
-	update_post_meta($post->ID, "product_nutritional_information", $_POST["product_nutritional_information"]);
-	update_post_meta($post->ID, "product_where_to_buy", $_POST["product_where_to_buy"]);
-}
 
 function save_recipe()
 {
 	global $post;
 
-	update_post_meta($post->ID, "recipe_serves", $_POST["recipe_serves"]);
-	update_post_meta($post->ID, "recipe_prep_time", $_POST["recipe_prep_time"]);
-	update_post_meta($post->ID, "recipe_cooking_time", $_POST["recipe_cooking_time"]);
 	update_post_meta($post->ID, "dietary_information", $_POST["dietary_information"]);
 	update_post_meta($post->ID, "recipe_ingredients", $_POST["recipe_ingredients"]);
 	update_post_meta($post->ID, "recipe_method", $_POST["recipe_method"]);

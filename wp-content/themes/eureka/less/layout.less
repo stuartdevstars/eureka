@@ -133,16 +133,23 @@ nav#nav {
 
 				&:hover, &:focus {
 					text-decoration: none;
+					cursor: pointer;
 				}
 			}
 
-			ul {
-				display: none;
+			&:hover {
+				ul {
+					display: block;
+				}
 			}
 		}
 
 		&.sub-nav {
 			display: none;
+			position: absolute;
+			left: 0;
+			width: 100%;
+			z-index: 999;
 
 			&.active {
 				display: block;
@@ -162,6 +169,10 @@ nav#nav {
 				color: #ac1f2d;
 				font-family: "BrandonGrotesque-Medium", sans-serif;
 				font-size: 1.5rem;
+
+				.single-ec_product & {
+					color: #ffffff;
+				}
 
 				@media @tablet {
 					font-size: 1.3rem;
@@ -187,7 +198,8 @@ main {
 	}
 
 	body.page-template-our-story & {
-		height: 2100px;
+		height: 2000px;
+		margin-bottom: 0;
 		padding-top: 47px;
 		background-image: url('img/testimonial-bg.jpg');
 	}
@@ -232,7 +244,7 @@ footer#footer {
 		border-top: 8px solid #e7e7e7;
 	}
 
-	#copyright span, #copyright a {
+	.copyright span, .copyright a {
 		color: #999999;
 
 		@media @phablet {

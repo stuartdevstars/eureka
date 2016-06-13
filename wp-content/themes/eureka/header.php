@@ -78,9 +78,24 @@ if(!$current_url_string) {
                             </li>
                             <li class="has-sub-nav<?php if(isset($url_parts) && $url_parts[0] == 'our-products'): ?> active<?php endif; ?>" data-subnav="our-products">
                                 <a href="<?php echo get_site_url(); ?>/products" title="View all of our products">Our products</a>
+                                <?php $args = array('post_type' => 'ec_product'); ?>
+                                <?php $loop = new WP_Query($args); ?>
+                                <?php if($loop->have_posts()) : ?>
+                                    <ul class="sub-nav our-products">
+                                        <?php while($loop->have_posts()) : $loop->the_post(); ?>
+                                            <li><a href="<?php echo get_permalink(); ?>" title="View our <?php the_title(); ?> product"><?php the_title(); ?></a></li>
+                                        <?php endwhile; ?>
+                                    </ul>
+                                <?php endif; ?>
                             </li>
                             <li class="has-sub-nav<?php if(isset($url_parts) && $url_parts[0] == 'recipes'): ?> active<?php endif; ?>" data-subnav="recipes">
                                 <a href="<?php echo get_site_url(); ?>/recipes" title="View our recipes">Recipes</a>
+                                <ul class="sub-nav recipes">
+                                    <li><a href="<?php echo get_site_url(); ?>/recipes" title="View all our recipes">All</a></li>
+                                    <!--<li><a href="<?php echo get_site_url(); ?>/recipes/most-viewed" title="View our most viewed recipes">Most viewed</a></li>-->
+                                    <li><a href="<?php echo get_site_url(); ?>/recipes?type=fish" title="View our fish recipes">Fish</a></li>
+                                    <li><a href="<?php echo get_site_url(); ?>/recipes?type=meat" title="View our meat recipes">Meat</a></li>
+                                </ul>
                             </li>
                             <li>
                                 <a title="Get in touch with us" class="get-in-touch">Get in touch</a>
@@ -88,23 +103,6 @@ if(!$current_url_string) {
                             <li<?php if(isset($url_parts) && $url_parts[0] == 'where-to-buy'): ?> class="active"<?php endif; ?>>
                                 <a href="<?php echo get_site_url(); ?>/where-to-buy" title="Find out where to buy our products">Where to buy</a>
                             </li>
-                        </ul>
-                        
-                        <?php $args = array('post_type' => 'ec_product'); ?>
-                        <?php $loop = new WP_Query($args); ?>
-                        <?php if($loop->have_posts()) : ?>
-                            <ul class="sub-nav our-products">
-                                <?php while($loop->have_posts()) : $loop->the_post(); ?>
-                                    <li><a href="<?php echo get_permalink(); ?>" title="View our <?php the_title(); ?> product"><?php the_title(); ?></a></li>
-                                <?php endwhile; ?>
-                            </ul>
-                        <?php endif; ?>
-
-                        <ul class="sub-nav recipes">
-                            <li><a href="<?php echo get_site_url(); ?>/recipes" title="View all our recipes">All</a></li>
-                            <!--<li><a href="<?php echo get_site_url(); ?>/recipes/most-viewed" title="View our most viewed recipes">Most viewed</a></li>-->
-                            <li><a href="<?php echo get_site_url(); ?>/recipes?type=fish" title="View our fish recipes">Fish</a></li>
-                            <li><a href="<?php echo get_site_url(); ?>/recipes?type=meat" title="View our meat recipes">Meat</a></li>
                         </ul>
 
                         <div class="social hidden-sm hidden-md hidden-lg">

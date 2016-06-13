@@ -1366,12 +1366,17 @@ nav#nav ul li a {
 nav#nav ul li a:hover,
 nav#nav ul li a:focus {
   text-decoration: none;
+  cursor: pointer;
 }
-nav#nav ul li ul {
-  display: none;
+nav#nav ul li:hover ul {
+  display: block;
 }
 nav#nav ul.sub-nav {
   display: none;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 999;
 }
 nav#nav ul.sub-nav.active {
   display: block;
@@ -1386,6 +1391,9 @@ nav#nav ul.sub-nav a {
   color: #ac1f2d;
   font-family: "BrandonGrotesque-Medium", sans-serif;
   font-size: 1.5rem;
+}
+.single-ec_product nav#nav ul.sub-nav a {
+  color: #ffffff;
 }
 @media (min-width: 768px) and (max-width: 990px) {
   nav#nav ul.sub-nav a {
@@ -1408,7 +1416,8 @@ body.page-template-our-story main {
   margin-top: 0;
 }
 body.page-template-our-story main {
-  height: 2100px;
+  height: 2000px;
+  margin-bottom: 0;
   padding-top: 47px;
   background-image: url('img/testimonial-bg.jpg');
 }
@@ -1446,13 +1455,13 @@ footer#footer .copyright {
   padding-top: 10px;
   border-top: 8px solid #e7e7e7;
 }
-footer#footer #copyright span,
-footer#footer #copyright a {
+footer#footer .copyright span,
+footer#footer .copyright a {
   color: #999999;
 }
 @media (max-width: 767px) {
-  footer#footer #copyright span,
-  footer#footer #copyright a {
+  footer#footer .copyright span,
+  footer#footer .copyright a {
     display: block;
   }
 }
@@ -1464,7 +1473,7 @@ footer#footer #copyright a {
 }
 #story-hero .hero-text {
   position: absolute;
-  top: 10px;
+  top: 20px;
   left: 0;
   right: 0;
   width: 100%;
@@ -1758,6 +1767,9 @@ footer#footer #copyright a {
   float: left;
   width: 178px;
 }
+.single-ec_product main > img {
+  width: 100%;
+}
 .product {
   margin-top: 47px;
 }
@@ -1777,7 +1789,8 @@ footer#footer #copyright a {
   border-bottom: 6px double #000000;
 }
 #product-ingredients article h4 {
-  margin: 0 0 10px 0;
+  margin: 0;
+  padding: 0 0 10px 0;
   font-family: "Kent4FPrintedShadowed";
   font-size: 1.6rem;
   line-height: 2.4rem;
@@ -1825,6 +1838,15 @@ footer#footer #copyright a {
     width: 100%;
     margin: 0 0 20px 0;
   }
+}
+.recipe-box .img-holder {
+  display: block;
+  position: relative;
+}
+.recipe-box .img-holder .tab {
+  position: absolute;
+  top: -1px;
+  left: 5px;
 }
 .recipes .recipe-box.featured {
   position: relative;
@@ -1883,13 +1905,25 @@ footer#footer #copyright a {
 }
 .recipe .recipe-overview .stamp {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 10px;
+  right: 10px;
 }
 .recipe .recipe-overview header {
   width: 75%;
   font-family: "Oswald";
   text-transform: uppercase;
+}
+.recipe .recipe-overview header.featured {
+  min-height: 100px;
+}
+.recipe .recipe-overview .img-holder {
+  display: block;
+  position: relative;
+}
+.recipe .recipe-overview .img-holder .tab {
+  position: absolute;
+  top: -1px;
+  left: 5px;
 }
 .recipe .recipe-overview h2 {
   margin: 0;
@@ -1952,7 +1986,7 @@ footer#footer #copyright a {
   text-decoration: none;
 }
 .recipe .recipe-detail section .content {
-  margin-top: 15px;
+  padding-top: 15px;
 }
 .recipe .recipe-detail section .content li {
   margin-bottom: 5px;
@@ -1985,6 +2019,11 @@ footer#footer #copyright a {
 #our-story div.map {
   top: 55px;
   right: 0px;
+}
+#our-story img.explorer,
+#our-story div.explorer {
+  top: 464px;
+  left: 184px;
 }
 #our-story img.photo,
 #our-story div.photo {
@@ -2025,8 +2064,8 @@ footer#footer #copyright a {
 }
 #our-story img.final-text,
 #our-story div.final-text {
-  top: 1900px;
-  left: 300px;
+  top: 1875px;
+  left: 255px;
   font-family: "Kent4FPrinted";
   font-size: 2.9rem;
 }

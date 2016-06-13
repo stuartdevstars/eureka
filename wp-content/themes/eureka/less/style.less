@@ -23,7 +23,7 @@ Tags:
 
 	.hero-text {
 		position: absolute;
-		top: 10px;
+		top: 20px;
 		left: 0;
 		right: 0;
 		width: 100%;
@@ -355,6 +355,10 @@ Tags:
 	width: 178px;
 }
 
+.single-ec_product main > img {
+	width: 100%;
+}
+
 .product {
 	margin-top: 47px;
 }
@@ -374,7 +378,8 @@ Tags:
 		border-bottom: 6px double #000000;
 
 		h4 {
-			margin: 0 0 10px 0;
+			margin: 0;
+			padding: 0 0 10px 0;
 			font-family: "Kent4FPrintedShadowed";
 			font-size: 1.6rem;
 			line-height: 2.4rem;
@@ -427,6 +432,17 @@ Tags:
 		@media @phablet {
 			width: 100%;
 			margin: 0 0 20px 0;
+		}
+	}
+
+	.img-holder {
+		display: block;
+		position: relative;
+
+		.tab {
+			position: absolute;
+			top: -1px;
+			left: 5px;
 		}
 	}
 
@@ -497,14 +513,29 @@ Tags:
 
 		.stamp {
 			position: absolute;
-			top: 20px;
-			right: 20px;
+			top: 10px;
+			right: 10px;
 		}
 
 		header {
 			width: 75%;
 			font-family: "Oswald";
 			text-transform: uppercase;
+
+			&.featured {
+				min-height: 100px;
+			}
+		}
+
+		.img-holder {
+			display: block;
+			position: relative;
+
+			.tab {
+				position: absolute;
+				top: -1px;
+				left: 5px;
+			}
 		}
 
 		h2 {
@@ -578,7 +609,7 @@ Tags:
 			}
 
 			.content {
-				margin-top: 15px;
+				padding-top: 15px;
 
 				li {
 					margin-bottom: 5px;
@@ -616,6 +647,11 @@ Tags:
 		&.map {
 			top: 55px;
 			right: 0px;
+		}
+
+		&.explorer {
+			top: 464px;
+			left: 184px;
 		}
 
 		&.photo {

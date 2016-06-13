@@ -4,6 +4,7 @@
 	<?php while (have_posts()) : the_post(); ?>
 		<?php $recipe_meta = get_post_custom(); ?>
 		<?php $dietary_information = unserialize($recipe_meta['dietary_information'][0]); ?>
+		<?php $type = get_field('recipe_type'); ?>
 		<?php $image = get_field('recipe_image'); ?>
 		<?php $featured = get_field('featured_recipe'); ?>
 		
@@ -16,26 +17,34 @@
 								<img src="<?php echo get_template_directory_uri(); ?>/img/recipes/featured-recipe-stamp.png" class="stamp">
 							<?php endif; ?>
 							
-							<header>
+							<header<?php if($featured): ?> class="featured"<?php endif; ?>>
 								<h2 itemprop="name"><?php the_title(); ?></h2>
 								<div itemprop="description" class="sr-only"><?php the_content(); ?></div>
 								<hr />
 								<ul>
-									<?php if(!empty($recipe_meta['recipe_type'])): ?>
-										<li><?php echo $recipe_meta['recipe_type'][0]; ?></li>
+									<?php if(get_field('recipe_type')): ?>
+										<li><?php the_field('recipe_type') ?></li>
 									<?php endif; ?>
-									<?php if(!empty($recipe_meta['recipe_serves'])): ?>
-										<li>Serves: <?php echo $recipe_meta['recipe_serves'][0]; ?></li>
+									<?php if(get_field('serves')): ?>
+										<li>Serves: <?php the_field('serves'); ?></li>
 									<?php endif; ?>
-									<?php if(!empty($recipe_meta['recipe_prep_time'])): ?>
-										<li>Prep-time: <time datetime="PT<?php echo strtoupper($recipe_meta['recipe_prep_time'][0]); ?>" itemprop="prepTime"><?php echo $recipe_meta['recipe_prep_time'][0]; ?></time></li>
+									<?php if(get_field('prep_time')): ?>
+										<li>Prep-time: <time datetime="PT<?php echo strtoupper(the_field('prep_time')); ?>" itemprop="prepTime"><?php the_field('prep_time'); ?></time></li>
 									<?php endif; ?>
-									<?php if(!empty($recipe_meta['recipe_cooking_time'])): ?>
-										<li>Cooking time: <time datetime="PT<?php echo strtoupper($recipe_meta['recipe_prep_time'][0]); ?>" itemprop="cookTime"><?php echo $recipe_meta['recipe_cooking_time'][0]; ?></time></li>
+									<?php if(get_field('cooking_time')): ?>
+										<li>Cooking time: <time datetime="PT<?php echo strtoupper(the_field('cooking_time')); ?>" itemprop="cookTime"><?php the_field('cooking_time'); ?></time></li>
 									<?php endif; ?>
 								</ul>
 							</header>
-							<img src="<?php echo $image['sizes']['large']; ?>" class="img-responsive" itemprop="image">
+							<div class="img-holder">
+								<?php if($type == 'Fish'):?>
+									<img src="<?php echo get_template_directory_uri(); ?>/img/product-tabs/fish-tab.png" alt="Fish product" class="tab">
+								<?php endif; ?>
+								<?php if($type == 'Meat'):?>
+									<img src="<?php echo get_template_directory_uri(); ?>/img/product-tabs/meat-tab.png" alt="Meat product" class="tab">
+								<?php endif; ?>
+								<img src="<?php echo $image['sizes']['large']; ?>" class="img-responsive" itemprop="image">
+							</div>
 						</div>
 					</div>
 					<div class="col-sm-4">
@@ -74,13 +83,13 @@
 						</article>
 					</div>
 					<div class="col-sm-2">
-						<a href="" title="See our fish products" style="display: block; margin-bottom: 20px;">
+						<a href="<?php echo get_site_url(); ?>/products/hake-fillets" title="See our fish products" style="display: block; margin-bottom: 20px;">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/fish-products-sidebar.jpg" alt="See our fish products" class="img-responsive">
 						</a>
 						<article class="recipe-box text-center shadow">
 							<img src="<?php echo get_template_directory_uri(); ?>/img/recipes/fish-recipe-small.png" alt="Recipe image" class="img-responsive">
 							<h4>Lorem Ipsum Dolor Sit Conecteur Alleur</h4>
-							<a href="" class="btn btn-primary" title="View full recipe">Full recipe</a>
+							<a href="<?php echo get_site_url(); ?>" class="btn btn-primary" title="View full recipe">Full recipe</a>
 						</article>
 					</div>
 				</div>
