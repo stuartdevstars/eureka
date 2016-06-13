@@ -32,12 +32,12 @@
 	$('#nav .open-nav').click(function(e) {
 		$('body').toggleClass('nav-open');
 
-		if($('#nav ul:not(.sub-nav)').is(':visible')) {
+		if($('#nav .navbar').is(':visible')) {
 			$('#nav .open-nav img').attr('src', base_url + '/img/menu.svg');
 		} else {
 			$('#nav .open-nav img').attr('src', base_url + '/img/close.svg');
 		}
-		$('#nav ul:not(.sub-nav)').toggle();
+		$('#nav .navbar').toggle();
 	});
 
 	$(window).load(function() {

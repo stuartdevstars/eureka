@@ -68,43 +68,52 @@ if(!$current_url_string) {
             <div class="row">
                 <div class="col-md-12">
                     <a class="open-nav pull-right mobile"><img src="<?php echo get_template_directory_uri(); ?>/img/menu.svg" alt="Menu open"></a>
-                    <ul>
-                        <li class="home">
-                            <a href="<?php echo get_site_url(); ?>" title="Go to the Eureka Cove home page">Home</a>
-                        </li>
-                        <li<?php if(isset($url_parts) && $url_parts[0] == 'our-story'): ?> class="active"<?php endif; ?>>
-                            <a href="<?php echo get_site_url(); ?>/our-story" title="Find out about our story">Our story</a>
-                        </li>
-                        <li class="has-sub-nav<?php if(isset($url_parts) && $url_parts[0] == 'our-products'): ?> active<?php endif; ?>" data-subnav="our-products">
-                            <a href="<?php echo get_site_url(); ?>/products" title="View all of our products">Our products</a>
-                        </li>
-                        <li class="has-sub-nav<?php if(isset($url_parts) && $url_parts[0] == 'recipes'): ?> active<?php endif; ?>" data-subnav="recipes">
-                            <a href="<?php echo get_site_url(); ?>/recipes" title="View our recipes">Recipes</a>
-                        </li>
-                        <li>
-                            <a title="Get in touch with us" class="get-in-touch">Get in touch</a>
-                        </li>
-                        <li<?php if(isset($url_parts) && $url_parts[0] == 'where-to-buy'): ?> class="active"<?php endif; ?>>
-                            <a href="<?php echo get_site_url(); ?>/where-to-buy" title="Find out where to buy our products">Where to buy</a>
-                        </li>
-                    </ul>
-                    
-                    <?php $args = array('post_type' => 'ec_product'); ?>
-                    <?php $loop = new WP_Query($args); ?>
-                    <?php if($loop->have_posts()) : ?>
-                        <ul class="sub-nav our-products">
-                            <?php while($loop->have_posts()) : $loop->the_post(); ?>
-                                <li><a href="<?php echo get_permalink(); ?>" title="View our <?php the_title(); ?> product"><?php the_title(); ?></a></li>
-                            <?php endwhile; ?>
+                    <div class="navbar">
+                        <ul>
+                            <li class="home">
+                                <a href="<?php echo get_site_url(); ?>" title="Go to the Eureka Cove home page">Home</a>
+                            </li>
+                            <li<?php if(isset($url_parts) && $url_parts[0] == 'our-story'): ?> class="active"<?php endif; ?>>
+                                <a href="<?php echo get_site_url(); ?>/our-story" title="Find out about our story">Our story</a>
+                            </li>
+                            <li class="has-sub-nav<?php if(isset($url_parts) && $url_parts[0] == 'our-products'): ?> active<?php endif; ?>" data-subnav="our-products">
+                                <a href="<?php echo get_site_url(); ?>/products" title="View all of our products">Our products</a>
+                            </li>
+                            <li class="has-sub-nav<?php if(isset($url_parts) && $url_parts[0] == 'recipes'): ?> active<?php endif; ?>" data-subnav="recipes">
+                                <a href="<?php echo get_site_url(); ?>/recipes" title="View our recipes">Recipes</a>
+                            </li>
+                            <li>
+                                <a title="Get in touch with us" class="get-in-touch">Get in touch</a>
+                            </li>
+                            <li<?php if(isset($url_parts) && $url_parts[0] == 'where-to-buy'): ?> class="active"<?php endif; ?>>
+                                <a href="<?php echo get_site_url(); ?>/where-to-buy" title="Find out where to buy our products">Where to buy</a>
+                            </li>
                         </ul>
-                    <?php endif; ?>
+                        
+                        <?php $args = array('post_type' => 'ec_product'); ?>
+                        <?php $loop = new WP_Query($args); ?>
+                        <?php if($loop->have_posts()) : ?>
+                            <ul class="sub-nav our-products">
+                                <?php while($loop->have_posts()) : $loop->the_post(); ?>
+                                    <li><a href="<?php echo get_permalink(); ?>" title="View our <?php the_title(); ?> product"><?php the_title(); ?></a></li>
+                                <?php endwhile; ?>
+                            </ul>
+                        <?php endif; ?>
 
-                    <ul class="sub-nav recipes">
-                        <li><a href="<?php echo get_site_url(); ?>/recipes" title="View all our recipes">All</a></li>
-                        <!--<li><a href="<?php echo get_site_url(); ?>/recipes/most-viewed" title="View our most viewed recipes">Most viewed</a></li>-->
-                        <li><a href="<?php echo get_site_url(); ?>/recipes?type=fish" title="View our fish recipes">Fish</a></li>
-                        <li><a href="<?php echo get_site_url(); ?>/recipes?type=meat" title="View our meat recipes">Meat</a></li>
-                    </ul>
+                        <ul class="sub-nav recipes">
+                            <li><a href="<?php echo get_site_url(); ?>/recipes" title="View all our recipes">All</a></li>
+                            <!--<li><a href="<?php echo get_site_url(); ?>/recipes/most-viewed" title="View our most viewed recipes">Most viewed</a></li>-->
+                            <li><a href="<?php echo get_site_url(); ?>/recipes?type=fish" title="View our fish recipes">Fish</a></li>
+                            <li><a href="<?php echo get_site_url(); ?>/recipes?type=meat" title="View our meat recipes">Meat</a></li>
+                        </ul>
+
+                        <div class="social hidden-sm hidden-md hidden-lg">
+                            <a href="https://www.facebook.com" title="Like Eureka Cove on Facebook"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/facebook-white.png" alt="Facebook logo"></a>
+                            <a href="https://www.twitter.com" title="Follow Eureka Cove on Twitter"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/twitter-white.png" alt="Twitter logo"></a>
+                            <a href="https://www.instagram.com" title="Follow Eureka Cove on Instagram"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/instagram-white.png" alt="Instagram logo"></a>
+                            <a href="https://www.youtube.com" title="Subscribe to Eureka Cove on YouTube"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/youtube-white.png" alt="YouTube logo"></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
