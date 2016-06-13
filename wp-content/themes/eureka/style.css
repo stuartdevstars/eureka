@@ -1403,8 +1403,14 @@ main {
 body.home main {
   margin: 0;
 }
-body.single-ec_product main {
+body.single-ec_product main,
+body.page-template-our-story main {
   margin-top: 0;
+}
+body.page-template-our-story main {
+  height: 2100px;
+  padding-top: 47px;
+  background-image: url('img/testimonial-bg.jpg');
 }
 body.page .content {
   padding: 10px;
@@ -1953,4 +1959,80 @@ footer#footer #copyright a {
 }
 .recipe .recipe-detail section:not(:first-child) .content {
   display: none;
+}
+#our-story div {
+  font-size: 2rem;
+}
+#our-story div span {
+  font-family: "Kent4FPrintedShadowed";
+}
+#our-story img,
+#our-story div {
+  position: absolute;
+}
+#our-story img.heading,
+#our-story div.heading {
+  top: 0px;
+  left: 65px;
+}
+#our-story img.intro-text,
+#our-story div.intro-text {
+  top: 225px;
+  left: 127px;
+  width: 255px;
+}
+#our-story img.map,
+#our-story div.map {
+  top: 55px;
+  right: 0px;
+}
+#our-story img.photo,
+#our-story div.photo {
+  top: 695px;
+  left: 435px;
+}
+#our-story img.fish-text,
+#our-story div.fish-text {
+  top: 740px;
+  left: 690px;
+  width: 255px;
+}
+#our-story img.map-small,
+#our-story div.map-small {
+  top: 990px;
+  left: 200px;
+}
+#our-story img.cows,
+#our-story div.cows {
+  top: 1170px;
+  right: 80px;
+}
+#our-story img.beef-text,
+#our-story div.beef-text {
+  top: 1500px;
+  left: 130px;
+  width: 255px;
+}
+#our-story img.fareshare,
+#our-story div.fareshare {
+  top: 1730px;
+  right: 555px;
+}
+#our-story img.trail,
+#our-story div.trail {
+  top: 295px;
+  right: 255px;
+}
+#our-story img.final-text,
+#our-story div.final-text {
+  top: 1900px;
+  left: 300px;
+  font-family: "Kent4FPrinted";
+  font-size: 2.9rem;
+}
+#our-story img.final-text span,
+#our-story div.final-text span {
+  margin-right: 20px;
+  color: #2369be;
+  font-size: 6.4rem;
 }
