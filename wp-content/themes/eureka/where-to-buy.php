@@ -2,6 +2,109 @@
 /*
 Template Name: Where to buy
 */
+
+$costco_fish_products = get_posts(array(
+	'post_type' => 'ec_product',
+	'meta_query' => array(
+		'relation'		=> 'AND',
+		array(
+			'key'	 	=> 'where_to_buy',
+			'value'	  	=> 'Costco',
+			'compare' 	=> 'LIKE',
+		),
+		array(
+			'key'		=> 'product_type',
+			'compare'	=> '=',
+			'value'		=> 'Fish',
+		),
+	),
+));
+
+$costco_meat_products = get_posts(array(
+	'post_type' => 'ec_product',
+	'meta_query' => array(
+		'relation'		=> 'AND',
+		array(
+			'key'	 	=> 'where_to_buy',
+			'value'	  	=> 'Costco',
+			'compare' 	=> 'LIKE',
+		),
+		array(
+			'key'		=> 'product_type',
+			'compare'	=> '=',
+			'value'		=> 'Meat',
+		),
+	),
+));
+
+$tesco_fish_products = get_posts(array(
+	'post_type' => 'ec_product',
+	'meta_query' => array(
+		'relation'		=> 'AND',
+		array(
+			'key'	 	=> 'where_to_buy',
+			'value'	  	=> 'Costco',
+			'compare' 	=> 'LIKE',
+		),
+		array(
+			'key'		=> 'product_type',
+			'compare'	=> '=',
+			'value'		=> 'Fish',
+		),
+	),
+));
+
+$tesco_meat_products = get_posts(array(
+	'post_type' => 'ec_product',
+	'meta_query' => array(
+		'relation'		=> 'AND',
+		array(
+			'key'	 	=> 'where_to_buy',
+			'value'	  	=> 'Tesco',
+			'compare' 	=> 'LIKE',
+		),
+		array(
+			'key'		=> 'product_type',
+			'compare'	=> '=',
+			'value'		=> 'Meat',
+		),
+	),
+));
+
+$sainsburys_fish_products = get_posts(array(
+	'post_type' => 'ec_product',
+	'meta_query' => array(
+		'relation'		=> 'AND',
+		array(
+			'key'	 	=> 'where_to_buy',
+			'value'	  	=> "Sainsbury's",
+			'compare' 	=> 'LIKE',
+		),
+		array(
+			'key'		=> 'product_type',
+			'compare'	=> '=',
+			'value'		=> 'Fish',
+		),
+	),
+));
+
+$sainsburys_meat_products = get_posts(array(
+	'post_type' => 'ec_product',
+	'meta_query' => array(
+		'relation'		=> 'AND',
+		array(
+			'key'	 	=> 'where_to_buy',
+			'value'	  	=> "Sainsbury's",
+			'compare' 	=> 'LIKE',
+		),
+		array(
+			'key'		=> 'product_type',
+			'compare'	=> '=',
+			'value'		=> 'Meat',
+		),
+	),
+));
+
 ?>
 
 <?php get_header(); ?>
@@ -26,18 +129,24 @@ Template Name: Where to buy
 								</div>
 								<div class="products">
 									<h4>Products stocked<span>....................................</span></h4>
-									<div class="fish">
-										<h5>Fish</h5>
-										<p><a href="">Hake Fillets <span class="exclusive">*</span></a></p>
-										<p><a href="">Hake Goujons <span class="exclusive">*</span></a></p>
-										<p><a href="">Gifilte Fish Balls</a></p>
-									</div>
-									<div class="meat">
-										<h5>Meat</h5>
-										<p><a href="">Chicken drumsticks</a></p>
-										<p><a href="">Baby beef sausages</a></p>
-										<p><a href="">Continental beef Sausages</a></p>
-									</div>
+									
+									<?php if(!empty($costco_fish_products)): ?>
+										<div class="fish">
+											<h5>Fish</h5>
+											<?php foreach ($costco_fish_products as $fish_product): ?>
+												<p><a href=""><?php echo $fish_product->post_title; ?></a></p>
+											<?php endforeach; ?>
+										</div>
+									<?php endif; ?>
+
+									<?php if(!empty($costco_meat_products)): ?>
+										<div class="meat">
+											<h5>Meat</h5>
+											<?php foreach ($costco_meat_products as $meat_product): ?>
+												<p><a href=""><?php echo $meat_product->post_title; ?></a></p>
+											<?php endforeach; ?>
+										</div>
+									<?php endif; ?>
 								</div>
 							</article>
 							<article class="store">
@@ -49,14 +158,24 @@ Template Name: Where to buy
 								</div>
 								<div class="products">
 									<h4>Products stocked<span>....................................</span></h4>
-									<div class="fish">
-										<h5>Fish</h5>
-										<p><a href="">Gifilte Fish Balls</a></p>
-									</div>
-									<div class="meat">
-										<h5>Meat</h5>
-										<p><a href="">Continental beef Sausages</a></p>
-									</div>
+
+									<?php if(!empty($tesco_fish_products)): ?>
+										<div class="fish">
+											<h5>Fish</h5>
+											<?php foreach ($tesco_fish_products as $fish_product): ?>
+												<p><a href=""><?php echo $fish_product->post_title; ?></a></p>
+											<?php endforeach; ?>
+										</div>
+									<?php endif; ?>
+
+									<?php if(!empty($tesco_meat_products)): ?>
+										<div class="meat">
+											<h5>Meat</h5>
+											<?php foreach ($tesco_meat_products as $meat_product): ?>
+												<p><a href=""><?php echo $meat_product->post_title; ?></a></p>
+											<?php endforeach; ?>
+										</div>
+									<?php endif; ?>
 								</div>
 							</article>
 							<article class="store">
@@ -68,26 +187,35 @@ Template Name: Where to buy
 								</div>
 								<div class="products">
 									<h4>Products stocked<span>....................................</span></h4>
-									<div class="fish">
-										<h5>Fish</h5>
-										<p><a href="">Gifilte Fish Balls</a></p>
-									</div>
-									<div class="meat">
-										<h5>Meat</h5>
-										<p><a href="">Chicken drumsticks</a></p>
-										<p><a href="">Baby beef sausages</a></p>
-									</div>
+
+									<?php if(!empty($sainsburys_fish_products)): ?>
+										<div class="fish">
+											<h5>Fish</h5>
+											<?php foreach ($sainsburys_fish_products as $fish_product): ?>
+												<p><a href=""><?php echo $fish_product->post_title; ?></a></p>
+											<?php endforeach; ?>
+										</div>
+									<?php endif; ?>
+
+									<?php if(!empty($sainsburys_meat_products)): ?>
+										<div class="meat">
+											<h5>Meat</h5>
+											<?php foreach ($sainsburys_meat_products as $meat_product): ?>
+												<p><a href=""><?php echo $meat_product->post_title; ?></a></p>
+											<?php endforeach; ?>
+										</div>
+									<?php endif; ?>
 								</div>
 							</article>
 						</div>
-						<div class="brand-graphic"><img src="<?php echo get_template_directory_uri(); ?>/img/brand-graphic.png" alt="" class="img-responsive center-block"></div>
+						<div class="brand-graphic hidden-xs"><img src="<?php echo get_template_directory_uri(); ?>/img/brand-graphic.png" alt="" class="img-responsive center-block"></div>
 					</section>
 				<?php endwhile; ?>
 			<?php endif; ?>
 		</div>
-		<aside class="col-sm-2">
+		<aside class="col-sm-2 text-center">
 			<img src="<?php echo get_template_directory_uri(); ?>/img/buy-online-sidebar.jpg" alt="Buy online.  Coming soon" class="img-responsive center-block" style="margin-bottom: 30px;">
-			<div class="shadow center-block">
+			<div class="shadow" style="display: inline-block;">
 				<a href="<?php echo get_site_url(); ?>/recipes" title="View our recipes">
 					<img src="<?php echo get_template_directory_uri(); ?>/img/view-recipes-sidebar.jpg" alt="View our recipes" class="img-responsive">
 				</a>

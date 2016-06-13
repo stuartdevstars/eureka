@@ -33,6 +33,8 @@
 		$eureka.equalHeightProductInfo();
 
 		$eureka.equalHeightRecipes();
+
+		$eureka.equalWhereToBuy();
 	});
 
 	$(window).resize(function() {
@@ -41,6 +43,8 @@
 		$eureka.equalHeightProductInfo();
 
 		$eureka.equalHeightRecipes();
+
+		$eureka.equalWhereToBuy();
 	});
 
 	$('#product-ingredients h4 a, .recipe-detail h3 a').click(function(e) {
@@ -75,18 +79,28 @@
 		}
 	}
 
-	$eureka.equalHeightRecipes = function(){
+	$eureka.equalHeightRecipes = function() {
+		$('.recipes .recipe-box').css('height', 'auto');
+
 		if(window.matchMedia("(min-width: 768px)").matches) {
 			$('.recipes .row').each(function() {
 				var $maxHeight = 0;
 				$(this).find('.recipe-box').each(function(){
-					$maxHeight = $(this).height();
+					$maxHeight = $(this).outerHeight();
 				});
 
-				$(this).find('.recipe-box').height($maxHeight);
+				$(this).find('.recipe-box').outerHeight($maxHeight);
 			});
-		} else {
-			$('.recipes .recipe-box').css('height', 'auto');
+		}
+	}
+
+	$eureka.equalWhereToBuy = function() {
+		$('#buy-info .brand-graphic, #buy-info .store-info').css('height', 'auto');
+
+		if(window.matchMedia("(min-width: 768px)").matches) {
+			var $maxHeight = Math.max($('#buy-info .brand-graphic').outerHeight(), $('#buy-info .store-info').outerHeight());
+
+			$('#buy-info .brand-graphic, #buy-info .store-info').outerHeight($maxHeight);
 		}
 	}
 } )( jQuery );

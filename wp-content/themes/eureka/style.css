@@ -1597,6 +1597,11 @@ footer#footer .copyright a {
   border: 2px solid #000000;
   overflow: hidden;
 }
+@media (max-width: 767px) {
+  #buy-info {
+    margin-bottom: 20px;
+  }
+}
 #buy-info > header,
 #buy-info > div {
   padding: 25px;
@@ -1632,6 +1637,11 @@ footer#footer .copyright a {
   float: left;
   width: 63.5%;
 }
+@media (max-width: 767px) {
+  #buy-info .store-info {
+    width: 100%;
+  }
+}
 #buy-info .store-info .store {
   margin-bottom: 15px;
   padding-bottom: 15px;
@@ -1648,8 +1658,20 @@ footer#footer .copyright a {
   margin: 0 0 10px 0;
 }
 #buy-info .store-info .store .contact {
-  float: left;
-  width: 40%;
+  width: 100%;
+  margin-bottom: 10px;
+}
+@media (max-width: 767px) {
+  #buy-info .store-info .store .contact {
+    word-break: break-all;
+  }
+}
+@media (min-width: 461px) and (max-width: 767px), (min-width: 1280px) {
+  #buy-info .store-info .store .contact {
+    float: left;
+    width: 40%;
+    margin-bottom: 0;
+  }
 }
 #buy-info .store-info .store .contact img {
   display: block;
@@ -1659,8 +1681,13 @@ footer#footer .copyright a {
   margin-bottom: 0;
 }
 #buy-info .store-info .store .products {
-  float: right;
-  width: 60%;
+  width: 100%;
+}
+@media (min-width: 461px) and (max-width: 767px), (min-width: 1280px) {
+  #buy-info .store-info .store .products {
+    float: right;
+    width: 60%;
+  }
 }
 #buy-info .store-info .store .products > div {
   float: left;

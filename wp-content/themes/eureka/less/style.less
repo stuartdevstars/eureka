@@ -162,6 +162,10 @@ Tags:
 	border: 2px solid #000000;
 	overflow: hidden;
 
+	@media @phablet {
+		margin-bottom: 20px;
+	}
+
 	> header, > div {
 		padding: 25px;
 		border: 2px solid #000000;
@@ -200,6 +204,10 @@ Tags:
 		float: left;
 		width: 63.5%;
 
+		@media @phablet {
+			width: 100%;
+		}
+
 		.store {
 			margin-bottom: 15px;
 			padding-bottom: 15px;
@@ -219,8 +227,18 @@ Tags:
 			}
 
 			.contact {
-				float: left;
-				width: 40%;
+				width: 100%;
+				margin-bottom: 10px;
+
+				@media @phablet {
+					word-break: break-all;
+				}
+
+				@media @phablet-only, @desktop {
+					float: left;
+					width: 40%;
+					margin-bottom: 0;
+				}
 
 				img {
 					display: block;
@@ -231,9 +249,14 @@ Tags:
 					margin-bottom: 0;
 				}
 			}
+
 			.products {
-				float: right;
-				width: 60%;
+				width: 100%;
+
+				@media @phablet-only, @desktop {
+					float: right;
+					width: 60%;
+				}
 
 				> div {
 					float: left;
