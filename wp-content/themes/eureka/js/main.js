@@ -9,11 +9,13 @@
 
 
 
-	$('#nav .get-in-touch').click(function(e) {
+	$('#nav .get-in-touch, #footer .get-in-touch-mobile').click(function(e) {
 		$('#get-in-touch').slideDown();
 		$('html,body').animate({
           scrollTop: $('#get-in-touch').offset().top
         }, 1000);
+
+        e.preventDefault();
 	});
 
 	$('#nav .open-nav').click(function(e) {

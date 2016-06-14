@@ -88,7 +88,9 @@ nav#nav {
 
 			&:not(.home) {
 				&:hover, &:focus, &.active {
-					background: @primary-colour;
+					@media @tablet-up {
+						background: @primary-colour;
+					}
 				}
 			}
 
@@ -150,6 +152,10 @@ nav#nav {
 			left: 0;
 			width: 100%;
 			z-index: 999;
+
+			@media @phablet {
+				position: static;
+			}
 
 			&.active {
 				display: block;

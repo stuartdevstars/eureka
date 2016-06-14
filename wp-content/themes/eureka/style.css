@@ -1318,10 +1318,12 @@ nav#nav ul li {
 nav#nav ul li:last-child {
   margin-right: 0;
 }
-nav#nav ul li:not(.home):hover,
-nav#nav ul li:not(.home):focus,
-nav#nav ul li:not(.home).active {
-  background: #2369be;
+@media (min-width: 768px) {
+  nav#nav ul li:not(.home):hover,
+  nav#nav ul li:not(.home):focus,
+  nav#nav ul li:not(.home).active {
+    background: #2369be;
+  }
 }
 @media (min-width: 768px) {
   nav#nav ul li.home {
@@ -1377,6 +1379,11 @@ nav#nav ul.sub-nav {
   left: 0;
   width: 100%;
   z-index: 999;
+}
+@media (max-width: 767px) {
+  nav#nav ul.sub-nav {
+    position: static;
+  }
 }
 nav#nav ul.sub-nav.active {
   display: block;

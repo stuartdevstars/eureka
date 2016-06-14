@@ -50,7 +50,7 @@
 				<div class="col-sm-8">
 					<h5>Send us a message - in a bottle! (Or maybe quicker to use this form)</h5>
 					<hr />
-					<form>
+					<form action="<?php echo get_site_url(); ?>/thank-you" method="POST">
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="field field-required">
@@ -64,8 +64,8 @@
 								</div>
 
 								<div class="field field-required">
-									<label for="email-address" class="sr-only">Email address</label>
-									<input type="email" name="email-address" placeholder="Email address" required/>
+									<label for="email" class="sr-only">Email address</label>
+									<input type="email" name="email" placeholder="Email address" required/>
 								</div>
 
 								<div class="field">
@@ -79,8 +79,8 @@
 								</div>
 							</div>
 							<div class="col-sm-6">
-								<label for="your-message" class="sr-only">Your message</label>
-								<textarea name="your-message" rows="10" placeholder="Your message, type away..." required></textarea>
+								<label for="message" class="sr-only">Your message</label>
+								<textarea name="message" rows="10" placeholder="Your message, type away..." required></textarea>
 
 								<div class="text-right">
 									<button type="submit" name="contact-us-submit" class="btn btn-success" value="Send">Send</button>
