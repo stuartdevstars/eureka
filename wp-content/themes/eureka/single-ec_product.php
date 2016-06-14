@@ -16,7 +16,8 @@
 								<div class="map">
 									<img src="<?php echo $sourced_from_map['url']; ?>" alt="Sourced from map" class="img-responsive">
 								</div>
-								<div class="strapline" itemprop="name"><?php the_title(); ?></div>
+								<div class="sr-only" itemprop="name"><?php the_title(); ?></div>
+								<div class="strapline"><?php the_field('strapline'); ?></div>
 								<div class="sourced"><?php the_field('sourced_from_text');?></div>
 								<div class="flavour"><?php the_field('level_of_spice');?> <img src="<?php echo get_template_directory_uri(); ?>/img/chilli.png" alt="Chilli"></div>
 							</div>
