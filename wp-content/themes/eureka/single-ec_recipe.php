@@ -68,7 +68,7 @@
 								<header>
 									<h3 class="clearfix">Ingredients <a href="">+</a></h3>
 								</header>
-								<div class="content">
+								<div class="content ingredients">
 									<?php echo str_replace('<li', '<li itemprop="ingredients"', $recipe_meta['recipe_ingredients'][0]); ?>
 								</div>
 							</section>
@@ -76,7 +76,7 @@
 								<header>
 									<h3 class="clearfix">Method <a href="">+</a></h3>
 								</header>
-								<div class="content" itemprop="recipeInstructions">
+								<div class="content method" itemprop="recipeInstructions">
 									<?php echo $recipe_meta['recipe_method'][0]; ?>
 								</div>
 							</section>

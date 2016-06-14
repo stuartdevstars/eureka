@@ -634,9 +634,22 @@ Tags:
 			.content {
 				padding-top: 15px;
 
+				ul, ol {
+					padding-left: 0;
+					list-style-position: inside;
+				}
+
 				li {
 					margin-bottom: 5px;
 				}
+			}
+
+			.ingredients {
+				white-space: pre-line;
+			}
+
+			.method ul {
+				list-style-type: disc;
 			}
 
 			&:not(:first-child) .content {

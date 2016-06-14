@@ -2015,8 +2015,19 @@ footer#footer .copyright a {
 .recipe .recipe-detail section .content {
   padding-top: 15px;
 }
+.recipe .recipe-detail section .content ul,
+.recipe .recipe-detail section .content ol {
+  padding-left: 0;
+  list-style-position: inside;
+}
 .recipe .recipe-detail section .content li {
   margin-bottom: 5px;
+}
+.recipe .recipe-detail section .ingredients {
+  white-space: pre-line;
+}
+.recipe .recipe-detail section .method ul {
+  list-style-type: disc;
 }
 .recipe .recipe-detail section:not(:first-child) .content {
   display: none;
