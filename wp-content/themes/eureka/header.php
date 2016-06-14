@@ -76,7 +76,7 @@ if(!$current_url_string) {
                             <li<?php if(isset($url_parts) && $url_parts[0] == 'our-story'): ?> class="active"<?php endif; ?>>
                                 <a href="<?php echo get_site_url(); ?>/our-story" title="Find out about our story">Our story</a>
                             </li>
-                            <li class="has-sub-nav<?php if(isset($url_parts) && $url_parts[0] == 'our-products'): ?> active<?php endif; ?>" data-subnav="our-products">
+                            <li class="has-sub-nav<?php if(isset($url_parts) && $url_parts[0] == 'products'): ?> active<?php endif; ?>" data-subnav="our-products">
                                 <a href="<?php echo get_site_url(); ?>/products" title="View all of our products">Our products</a>
                                 <?php $args = array('post_type' => 'ec_product'); ?>
                                 <?php $loop = new WP_Query($args); ?>

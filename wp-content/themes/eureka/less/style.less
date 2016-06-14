@@ -594,6 +594,7 @@ Tags:
 	.recipe-detail {
 		padding: 15px;
 		background-image: url('img/crumpled-paper-bg.jpg');
+		background-size: 100%;
 
 		section {
 			padding: 15px 0;
@@ -730,10 +731,13 @@ Tags:
 		&.final-text {
 			top: 1875px;
     		left: 255px;
+    		padding-left: 60px;
     		font-family: "Kent4FPrinted";
     		font-size: 2.9rem;
 
     		span {
+    			position: absolute;
+    			left: 0;
     			margin-right: 20px;
     			color: @primary-colour;
     			font-size: 6.4rem;

@@ -1416,7 +1416,7 @@ body.page-template-our-story main {
   margin-top: 0;
 }
 body.page-template-our-story main {
-  height: 2000px;
+  height: 2100px;
   margin-bottom: 0;
   padding-top: 47px;
   background-image: url('img/testimonial-bg.jpg');
@@ -1979,6 +1979,7 @@ footer#footer .copyright a {
 .recipe .recipe-detail {
   padding: 15px;
   background-image: url('img/crumpled-paper-bg.jpg');
+  background-size: 100%;
 }
 .recipe .recipe-detail section {
   padding: 15px 0;
@@ -2104,11 +2105,14 @@ footer#footer .copyright a {
 #our-story div.final-text {
   top: 1875px;
   left: 255px;
+  padding-left: 60px;
   font-family: "Kent4FPrinted";
   font-size: 2.9rem;
 }
 #our-story img.final-text span,
 #our-story div.final-text span {
+  position: absolute;
+  left: 0;
   margin-right: 20px;
   color: #2369be;
   font-size: 6.4rem;
