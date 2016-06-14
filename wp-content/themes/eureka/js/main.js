@@ -64,10 +64,10 @@
 		var $productDescriptionHeight = $('#product-info .description').outerHeight();
 
 		$("#product-info .map, #product-info .strapline, #product-info .sourced, #product-info .flavour, #product-info .description, #product-ingredients").css('height', 'auto');
-		var maxHeight2 = Math.max.apply(null, $("#product-info .map, #product-info .strapline").map(function () { return $(this).height(); }).get());
+		var maxHeight2 = Math.max.apply(null, $("#product-info .map, #product-info .strapline").map(function () { return $(this).outerHeight(); }).get());
 		$("#product-info .map, #product-info .strapline").css('height', maxHeight2 + 'px');
 
-		var maxHeight3 = Math.max.apply(null, $("#product-info .sourced, #product-info .flavour").map(function () { return $(this).height(); }).get());
+		var maxHeight3 = Math.max.apply(null, $("#product-info .sourced, #product-info .flavour").map(function () { return $(this).outerHeight(); }).get());
 		$("#product-info .sourced, #product-info .flavour").css('height', maxHeight3 + 'px');
 
 		if(window.matchMedia("(min-width: 768px)").matches) {
