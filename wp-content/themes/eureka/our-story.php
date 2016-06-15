@@ -13,9 +13,7 @@ Template Name: Our story
 				<img src="<?php echo get_template_directory_uri(); ?>/img/our-story/heading.png" alt="" class="heading">
 				<div class="intro-text">
 					<span>Meet Richie!</span> , our chief explorer. Not your normal globe-trotter, Richie has dived (sometimes literally) into the markets, harbours and kitchens of the world to bring home its tastiest treasures.
-			
-			A stout pair of boots, an all-weather safari suit and a gleaming knife and fork: that’s all Richie packed for his global odyssey to discover the finest, freshest food out there. Guided by his nose and his tastebuds, Richie returned triumphant, endowing Eureka! Cove with his haul of tasty treasures. He wanted everyone to enjoy them so they’re all kosher and halal with no alcohol used anywhere. Well, why would you? 
-				</div>
+							</div>
 				<img src="<?php echo get_template_directory_uri(); ?>/img/our-story/map.png" alt="" class="map">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/our-story/explorer.png" alt="" class="explorer">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/our-story/photo.png" alt="" class="photo">
@@ -24,7 +22,7 @@ Template Name: Our story
 					</div>
 				<img src="<?php echo get_template_directory_uri(); ?>/img/our-story/cows.png" alt="" class="cows">
 				<div class="beef-text">
-					<span>The story of Beef at its Best</span> : it’s simple really. Europe’s is the tastiest, best bred, best cut beef around. So why look anywhere further? Finding the right suppliers and charming them with his worldly knowledge of good food was all Richie needed to secure yet another tasty treasure for the Eureka Cove range. 
+					<span>The story of Beef at its Best</span>: it’s simple really. Europe’s is the tastiest, best bred, best cut beef around. So why look anywhere further? Finding the right suppliers and charming them with his worldly knowledge of good food was all Richie needed to secure yet another tasty treasure for the Eureka Cove range. 
 				</div>
 				<img src="<?php echo get_template_directory_uri(); ?>/img/our-story/map-small.png" alt="" class="map-small">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/our-story/fareshare.png" alt="" class="fareshare">

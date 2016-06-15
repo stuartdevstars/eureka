@@ -53,12 +53,18 @@ if(!$current_url_string) {
                         <img src="<?php echo get_template_directory_uri(); ?>/img/header.png" alt="Eureka Cove - Bringing tasty treasures home" class="img-responsive desktop" />
                         <img src="<?php echo get_template_directory_uri(); ?>/img/header-mobile.png" alt="Eureka Cove - Bringing tasty treasures home" class="img-responsive mobile" />
                     </a>
+                    
+                    <!-- hiding social medai icons here 
+                    
                     <div class="social hidden-xs">
                         <a href="https://www.facebook.com" title="Like Eureka Cove on Facebook"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/facebook.svg" alt="Facebook logo" width="18"></a>
                         <a href="https://www.twitter.com" title="Follow Eureka Cove on Twitter"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/twitter.svg" alt="Twitter logo" width="18"></a>
                         <a href="https://www.instagram.com" title="Follow Eureka Cove on Instagram"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/instagram.svg" alt="Instagram logo" width="18"></a>
                         <a href="https://www.youtube.com" title="Subscribe to Eureka Cove on YouTube"><img src="<?php echo get_template_directory_uri(); ?>/img/icons/youtube.svg" alt="YouTube logo" width="18"></a>
                     </div>
+                    
+                    stop hiding social medai icons here -->
+                    
                 </div>
             </div>
         </div>

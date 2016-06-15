@@ -52,7 +52,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-9">
-				<p><span>Welcome to Eureka! Cove.</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Want more? <a href="<?php echo get_site_url(); ?>/our-story" title="Read our full story here">Read our full story here</a></p>
+				<p><span>Welcome to Eureka! Cove.</span> And congratulations! You’ve discovered a treasure trove of tasty treats. Scroll down and discover our range of delicious traditional foods, carefully sourced from around the world. The best quality means the best taste so it’s worth trying out some of our inspirational recipes too. Want more?   <a href="<?php echo get_site_url(); ?>/our-story" title="Read our full story here">Happy exploring!</a></p>
 			</div>
 			<div class="col-sm-3 text-center">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/free-from.png" alt="Free From Gluten and Diary logo">

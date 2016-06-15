@@ -41,7 +41,7 @@
 					<p>Customer Careline: +44 (0) 203 371 1225</p>
 					<p>Email: <a href="mailto:customercare@eurekacove.com">customercare@eurekacove.com</a></p>
 					<h5>Trade</h5>
-					<p>Mrs Smith - <a href="mailto:trade@eurekacove.com">trade@eurekacove.com</a></p>
+					<p>Mrs Smith - <a href="mailto:Customercare@EurekaCove.com">Customercare@EurekaCove.com</a></p>
 					<p>+44 (0) 203 371 1225</p>
 					<h5>Press</h5>
 					<p>Mrs Smith - <a href="mailto:press@eurekacove.com">press@eurekacove.com</a></p>
