@@ -670,70 +670,179 @@ Tags:
 	img, div {
 		position: absolute;
 
+		@media @phablet {
+			position: static;
+			width: auto !important;
+			text-align: center;
+			display: block;
+			margin: 0 auto 30px auto;
+		}
+
 		&.heading {
-			top: 0px;
-			left: 65px;
+			top: 0;
+			left: 6%;
+			width: 25.5%;
 		}
 
 		&.intro-text {
 			top: 225px;
-			left: 127px;
-			width: 255px;
+		    left: 11.5%;
+			width: 23%;
+
+			@media @tablet {
+				top: 145px;
+				left: 9.5%;
+				width: 25%;
+				font-size: 1.8rem;
+			}
 		}
 
 		&.map {
-			top: 55px;
 			right: 0px;
+			width: 64.5%;
+			padding-top: 5%;
 		}
 
 		&.explorer {
 			top: 464px;
-			left: 184px;
+			left: 16.5%;
+			width: 25.4%;
+
+			@media @tablet {
+				top: 313px;
+			}
+
+			@media @laptop {
+		    	top: 410px;
+		    }
 		}
 
 		&.photo {
 			top: 695px;
-    		left: 435px;
+			left: 39.5%;
+			width: 22.65%;
+
+			@media @tablet {
+				top: 480px;
+			}
+
+			@media @laptop {
+		    	top: 620px;
+		    }
 		}
 
 		&.fish-text {
 			top: 740px;
-    		left: 690px;
-			width: 255px;
+    		right: 13%;
+			width: 23%;
+
+			@media @tablet {
+				top: 500px;
+				right: 9%;
+				width: 28%;
+				font-size: 1.8rem;
+			}
+
+			@media @laptop {
+		    	top: 640px;
+		    }
 		}
 
 		&.map-small {
 			top: 990px;
-    		left: 200px;
+			left: 18%;
+			width: 28%;
+
+			@media @tablet {
+				top: 680px;
+			}
+
+			@media @laptop {
+		    	top: 875px;
+		    }
 		}
 
 		&.cows {
 			top: 1170px;
-			right: 80px;
+			right: 7.2%;
+			width: 57.1%;
+
+			@media @tablet {
+				top: 800px;
+			}
+
+			@media @laptop {
+		    	top: 1030px;
+		    }
 		}
 
 		&.beef-text {
 			top: 1500px;
-    		left: 130px;
-			width: 255px;
+    		left: 11.5%;
+			width: 23%;
+
+			@media @tablet {
+				top: 1020px;
+				left: 4.5%;
+				width: 30%;
+				font-size: 1.6rem;
+			}
+
+			@media @laptop {
+		    	top: 1330px;
+		    	font-size: 1.8rem;
+		    }
 		}
 
 		&.fareshare {
 			top: 1730px;
-    		right: 555px;
+			right: 50.1%;
+			width: 20.5%;
+
+			@media @tablet {
+				top: 1200px;
+			}
+
+			@media @laptop {
+		    	top: 1550px;
+		    }
 		}
 
 		&.trail {
 		    top: 295px;
-			right: 255px;
+			right: 23.1%;
+		    width: 67.2%;
+
+		    @media @tablet {
+		    	top: 210px;
+		    }
+
+		    @media @laptop {
+		    	top: 275px;
+		    }
 		}
 
 		&.final-text {
 			top: 1875px;
-    		left: 255px;
+    		left: 23.1%;
     		padding-left: 60px;
     		font-family: "Kent4FPrinted";
     		font-size: 2.9rem;
+
+    		@media @phablet {
+    			padding-left: 0;
+    			font-size: 2rem;
+    		}
+
+    		@media @tablet {
+    			top: 1300px;
+    			font-size: 2rem;
+    		}
+
+    		@media @laptop {
+		    	top: 1685px;
+		    	font-size: 2.4rem;
+		    }
 
     		span {
     			position: absolute;

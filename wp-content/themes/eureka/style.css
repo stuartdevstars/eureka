@@ -1428,6 +1428,21 @@ body.page-template-our-story main {
   padding-top: 47px;
   background-image: url('img/testimonial-bg.jpg');
 }
+@media (max-width: 767px) {
+  body.page-template-our-story main {
+    height: auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  body.page-template-our-story main {
+    height: 1465px;
+  }
+}
+@media (min-width: 991px) and (max-width: 1279px) {
+  body.page-template-our-story main {
+    height: 1850px;
+  }
+}
 body.page .content {
   padding: 10px;
   background-image: url('img/crumpled-paper-bg.jpg');
@@ -2050,71 +2065,222 @@ footer#footer .copyright a {
 #our-story div {
   position: absolute;
 }
+@media (max-width: 767px) {
+  #our-story img,
+  #our-story div {
+    position: static;
+    width: auto !important;
+    text-align: center;
+    display: block;
+    margin: 0 auto 30px auto;
+  }
+}
 #our-story img.heading,
 #our-story div.heading {
-  top: 0px;
-  left: 65px;
+  top: 0;
+  left: 6%;
+  width: 25.5%;
 }
 #our-story img.intro-text,
 #our-story div.intro-text {
   top: 225px;
-  left: 127px;
-  width: 255px;
+  left: 11.5%;
+  width: 23%;
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  #our-story img.intro-text,
+  #our-story div.intro-text {
+    top: 145px;
+    left: 9.5%;
+    width: 25%;
+    font-size: 1.8rem;
+  }
 }
 #our-story img.map,
 #our-story div.map {
-  top: 55px;
   right: 0px;
+  width: 64.5%;
+  padding-top: 5%;
 }
 #our-story img.explorer,
 #our-story div.explorer {
   top: 464px;
-  left: 184px;
+  left: 16.5%;
+  width: 25.4%;
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  #our-story img.explorer,
+  #our-story div.explorer {
+    top: 313px;
+  }
+}
+@media (min-width: 991px) and (max-width: 1279px) {
+  #our-story img.explorer,
+  #our-story div.explorer {
+    top: 410px;
+  }
 }
 #our-story img.photo,
 #our-story div.photo {
   top: 695px;
-  left: 435px;
+  left: 39.5%;
+  width: 22.65%;
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  #our-story img.photo,
+  #our-story div.photo {
+    top: 480px;
+  }
+}
+@media (min-width: 991px) and (max-width: 1279px) {
+  #our-story img.photo,
+  #our-story div.photo {
+    top: 620px;
+  }
 }
 #our-story img.fish-text,
 #our-story div.fish-text {
   top: 740px;
-  left: 690px;
-  width: 255px;
+  right: 13%;
+  width: 23%;
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  #our-story img.fish-text,
+  #our-story div.fish-text {
+    top: 500px;
+    right: 9%;
+    width: 28%;
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 991px) and (max-width: 1279px) {
+  #our-story img.fish-text,
+  #our-story div.fish-text {
+    top: 640px;
+  }
 }
 #our-story img.map-small,
 #our-story div.map-small {
   top: 990px;
-  left: 200px;
+  left: 18%;
+  width: 28%;
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  #our-story img.map-small,
+  #our-story div.map-small {
+    top: 680px;
+  }
+}
+@media (min-width: 991px) and (max-width: 1279px) {
+  #our-story img.map-small,
+  #our-story div.map-small {
+    top: 875px;
+  }
 }
 #our-story img.cows,
 #our-story div.cows {
   top: 1170px;
-  right: 80px;
+  right: 7.2%;
+  width: 57.1%;
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  #our-story img.cows,
+  #our-story div.cows {
+    top: 800px;
+  }
+}
+@media (min-width: 991px) and (max-width: 1279px) {
+  #our-story img.cows,
+  #our-story div.cows {
+    top: 1030px;
+  }
 }
 #our-story img.beef-text,
 #our-story div.beef-text {
   top: 1500px;
-  left: 130px;
-  width: 255px;
+  left: 11.5%;
+  width: 23%;
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  #our-story img.beef-text,
+  #our-story div.beef-text {
+    top: 1020px;
+    left: 4.5%;
+    width: 30%;
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 991px) and (max-width: 1279px) {
+  #our-story img.beef-text,
+  #our-story div.beef-text {
+    top: 1330px;
+    font-size: 1.8rem;
+  }
 }
 #our-story img.fareshare,
 #our-story div.fareshare {
   top: 1730px;
-  right: 555px;
+  right: 50.1%;
+  width: 20.5%;
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  #our-story img.fareshare,
+  #our-story div.fareshare {
+    top: 1200px;
+  }
+}
+@media (min-width: 991px) and (max-width: 1279px) {
+  #our-story img.fareshare,
+  #our-story div.fareshare {
+    top: 1550px;
+  }
 }
 #our-story img.trail,
 #our-story div.trail {
   top: 295px;
-  right: 255px;
+  right: 23.1%;
+  width: 67.2%;
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  #our-story img.trail,
+  #our-story div.trail {
+    top: 210px;
+  }
+}
+@media (min-width: 991px) and (max-width: 1279px) {
+  #our-story img.trail,
+  #our-story div.trail {
+    top: 275px;
+  }
 }
 #our-story img.final-text,
 #our-story div.final-text {
   top: 1875px;
-  left: 255px;
+  left: 23.1%;
   padding-left: 60px;
   font-family: "Kent4FPrinted";
   font-size: 2.9rem;
+}
+@media (max-width: 767px) {
+  #our-story img.final-text,
+  #our-story div.final-text {
+    padding-left: 0;
+    font-size: 2rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  #our-story img.final-text,
+  #our-story div.final-text {
+    top: 1300px;
+    font-size: 2rem;
+  }
+}
+@media (min-width: 991px) and (max-width: 1279px) {
+  #our-story img.final-text,
+  #our-story div.final-text {
+    top: 1685px;
+    font-size: 2.4rem;
+  }
 }
 #our-story img.final-text span,
 #our-story div.final-text span {
