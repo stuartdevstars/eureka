@@ -37,6 +37,8 @@
 		$eureka.equalHeightRecipes();
 
 		$eureka.equalWhereToBuy();
+
+		$eureka.animateOurStory();
 	});
 
 	$(window).resize(function() {
@@ -105,4 +107,60 @@
 			$('#buy-info .brand-graphic, #buy-info .store-info').outerHeight($maxHeight);
 		}
 	}
+
+	$eureka.animateOurStory = function() {
+		var $posFromTop = $(document).scrollTop();
+		var $windowHeight = $(window).height();
+		var $windowDisplayLine = ($windowHeight / 100) * 80;
+
+		var $heading = $('#our-story .heading');
+		var $introText = $('#our-story .intro-text');
+		var $map = $('#our-story .map');
+		var $photo = $('#our-story .photo');
+		var $fishText = $('#our-story .fish-text');
+		var $cows = $('#our-story .cows');
+		var $beefText = $('#our-story .beef-text');
+		var $mapSmall = $('#our-story .map-small');
+		var $fareshare = $('#our-story .fareshare');
+		var $trail = $('#our-story .trail');
+		var $finalText = $('#our-story .final-text');
+
+		if($heading.offset().top < $posFromTop + $windowDisplayLine) {
+			$heading.animate({'opacity': '1.0'}, 500);
+		}
+		if($introText.offset().top < $posFromTop + $windowDisplayLine) {
+			$introText.animate({'opacity': '1.0'}, 500);
+		}
+		if($map.offset().top < $posFromTop + $windowDisplayLine) {
+			$map.animate({'opacity': '1.0'}, 500);
+		}
+		if($photo.offset().top < $posFromTop + $windowDisplayLine) {
+			$photo.animate({'opacity': '1.0'}, 500);
+		}
+		if($fishText.offset().top < $posFromTop + $windowDisplayLine) {
+			$fishText.animate({'opacity': '1.0'}, 500);
+		}
+		if($cows.offset().top < $posFromTop + $windowDisplayLine) {
+			$cows.animate({'opacity': '1.0'}, 500);
+		}
+		if($beefText.offset().top < $posFromTop + $windowDisplayLine) {
+			$beefText.animate({'opacity': '1.0'}, 500);
+		}
+		if($mapSmall.offset().top < $posFromTop + $windowDisplayLine) {
+			$mapSmall.animate({'opacity': '1.0'}, 500);
+		}
+		if($fareshare.offset().top < $posFromTop + $windowDisplayLine) {
+			$fareshare.animate({'opacity': '1.0'}, 500);
+		}
+		if($trail.offset().top < $posFromTop + $windowDisplayLine) {
+			$trail.animate({'opacity': '1.0'}, 500);
+		}
+		if($finalText.offset().top < $posFromTop + $windowDisplayLine) {
+			$finalText.animate({'opacity': '1.0'}, 500);
+		}
+	}
+
+	$(window).scroll(function() {
+		$eureka.animateOurStory();
+	});
 } )( jQuery );

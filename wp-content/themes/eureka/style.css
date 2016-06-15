@@ -2064,6 +2064,7 @@ footer#footer .copyright a {
 #our-story img,
 #our-story div {
   position: absolute;
+  opacity: 0;
 }
 @media (max-width: 767px) {
   #our-story img,

@@ -1,17 +1,20 @@
-<?php get_header(); ?>
+<?php $random_recipes = get_posts( array( 'orderby' => 'rand', 'numberposts' => 1, 'post_type' => 'ec_recipe', 'exclude' => get_the_ID())); ?>
 
-<?php if (have_posts()) : ?>
-	<?php while (have_posts()) : the_post(); ?>
-		<?php $recipe_meta = get_post_custom(); ?>
-		<?php $dietary_information = unserialize($recipe_meta['dietary_information'][0]); ?>
-		<?php $type = get_field('recipe_type'); ?>
-		<?php $image = get_field('recipe_image'); ?>
-		<?php $featured = get_field('featured_recipe'); ?>
+<?php get_header(); ?>
 		
-		<div class="recipe" itemscope="" itemtype="http://schema.org/Recipe">
-			<div class="container">
-				<div class="row">
+<div class="recipe" itemscope="" itemtype="http://schema.org/Recipe">
+	<div class="container">
+		<div class="row">
+
+			<?php if (have_posts()) : ?>
+				<?php while (have_posts()) : the_post(); ?>
 					<div class="col-sm-6">
+						<?php $recipe_meta = get_post_custom(); ?>
+						<?php $dietary_information = unserialize($recipe_meta['dietary_information'][0]); ?>
+						<?php $type = get_field('recipe_type'); ?>
+						<?php $image = get_field('recipe_image'); ?>
+						<?php $featured = get_field('featured_recipe'); ?>
+
 						<div class="recipe-overview">
 							<?php if($featured): ?>
 								<img src="<?php echo get_template_directory_uri(); ?>/img/recipes/featured-recipe-stamp.png" class="stamp">
@@ -82,20 +85,35 @@
 							</section>
 						</article>
 					</div>
-					<div class="col-sm-2">
-						<a href="<?php echo get_site_url(); ?>/products/hake-fillets" title="See our fish products" style="display: block; margin-bottom: 20px;">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/fish-products-sidebar.jpg" alt="See our fish products" class="img-responsive">
-						</a>
+				<?php endwhile; ?>
+			<?php endif; ?>
+
+			<div class="col-sm-2">
+				<a href="<?php echo get_site_url(); ?>/products/hake-fillets" title="See our fish products" style="display: block; margin-bottom: 20px;">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/fish-products-sidebar.jpg" alt="See our fish products" class="img-responsive">
+				</a>
+				<?php if(!empty($random_recipes)): ?>
+					<?php foreach($random_recipes as $recipe): ?>
+						<?php $type = get_field('recipe_type', $recipe->ID); ?>
+						<?php $image = get_field('recipe_image', $recipe->ID); ?>
 						<article class="recipe-box text-center shadow">
-							<img src="<?php echo get_template_directory_uri(); ?>/img/recipes/fish-recipe-small.png" alt="Recipe image" class="img-responsive">
-							<h4>Lorem Ipsum Dolor Sit Conecteur Alleur</h4>
-							<a href="<?php echo get_site_url(); ?>" class="btn btn-primary" title="View full recipe">Full recipe</a>
+							<div class="img-holder">
+								<?php if($type == 'Fish'):?>
+									<img src="<?php echo get_template_directory_uri(); ?>/img/product-tabs/fish-tab.png" alt="Fish product" class="tab">
+								<?php endif; ?>
+								<?php if($type == 'Meat'):?>
+									<img src="<?php echo get_template_directory_uri(); ?>/img/product-tabs/meat-tab.png" alt="Meat product" class="tab">
+								<?php endif; ?>
+								<img src="<?php echo $image['sizes']['medium']; ?>" class="img-responsive" itemprop="image">
+							</div>
+							<h4><?php echo $recipe->post_title; ?></h4>
+							<a href="<?php echo get_permalink($recipe->ID); ?>" class="btn btn-primary" title="View full recipe">Full recipe</a>
 						</article>
-					</div>
-				</div>
+					<?php endforeach; ?>
+				<?php endif; ?>
 			</div>
 		</div>
-	<?php endwhile; ?>
-<?php endif; ?>
+	</div>
+</div>
 
 <?php get_footer(); ?>
