@@ -36,15 +36,11 @@
 			<div class="row">
 				<div class="col-sm-4">
 					<h4>Get in touch with us</h4>
-					<p>Eureka Cove</p>
-					<p>123, Address 1, Address 2, City AB1 CD2</p>
+					<h5>Eureka Cove</h5>
 					<p>Customer Careline: +44 (0) 203 371 1225</p>
 					<p>Email: <a href="mailto:customercare@eurekacove.com">customercare@eurekacove.com</a></p>
 					<h5>Trade</h5>
-					<p>Mrs Smith - <a href="mailto:Customercare@EurekaCove.com">Customercare@EurekaCove.com</a></p>
-					<p>+44 (0) 203 371 1225</p>
-					<h5>Press</h5>
-					<p>Mrs Smith - <a href="mailto:press@eurekacove.com">press@eurekacove.com</a></p>
+					<p>Email:<a href="mailto:Customercare@EurekaCove.com">Customercare@EurekaCove.com</a></p>
 					<p>+44 (0) 203 371 1225</p>
 				</div>
 				<div class="col-sm-8">
