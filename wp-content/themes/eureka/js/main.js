@@ -7,7 +7,13 @@
 	$('#promos .promo').eq(1).delay(600).animate({'opacity': '1.0'}, 500);
 	$('#promos .promo').eq(2).delay(900).animate({'opacity': '1.0'}, 500);
 
-
+	$('#nav .has-sub-nav[data-subnav="our-products"], nav.products').hover(function(e) {
+		if(window.matchMedia("(min-width: 768px)").matches) {
+			$('nav.products').show();
+		}
+	}, function(){
+		$('nav.products').hide();
+	});
 
 	$('#nav .get-in-touch').click(function(e) {
 		$('#get-in-touch').slideDown();

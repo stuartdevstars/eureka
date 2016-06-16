@@ -1412,6 +1412,47 @@ nav#nav ul.sub-nav a {
     font-size: 1.4rem;
   }
 }
+nav.products {
+  display: none;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 30px 0;
+  z-index: 99;
+  background: #e7e7e7;
+  border-bottom: 7px solid #090808;
+  z-index: 999;
+}
+nav.products li {
+  display: block;
+  margin-bottom: 10px;
+}
+nav.products img {
+  margin-right: 20px;
+}
+nav.products .fish-products img {
+  width: 61%;
+}
+nav.products .meat-products img {
+  width: 49%;
+}
+nav.products a {
+  color: #0d141e;
+  font-size: 2rem;
+  font-weight: normal;
+  text-decoration: underline;
+  text-transform: none;
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  nav.products a {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 991px) and (max-width: 1279px) {
+  nav.products a {
+    font-size: 1.8rem;
+  }
+}
 main {
   margin: 47px 0;
 }

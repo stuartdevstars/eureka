@@ -122,4 +122,36 @@ if(!$current_url_string) {
             </div>
         </div>
     </nav>
+    <nav class="products">
+        <?php $fish_products = new WP_Query(array('post_type' => 'ec_product', 'meta_query' => array(array('key' => 'product_type', 'compare' => '=', 'value' => 'Fish')))); ?>
+        <?php $meat_products = new WP_Query(array('post_type' => 'ec_product', 'meta_query' => array(array('key' => 'product_type', 'compare' => '=', 'value' => 'Meat')))); ?>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <?php if($fish_products->have_posts()) : ?>
+                        <div class="fish-products">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/fish-nav.jpg" alt="Fish products" class="pull-left">
+                            <ul>
+                                <?php while($fish_products->have_posts()) : $fish_products->the_post(); ?>
+                                    <li><a href="<?php echo get_permalink(); ?>" title="View our <?php the_title(); ?> product"><?php the_title(); ?></a></li>
+                                <?php endwhile; ?>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
+                </div>
+                <div class="col-sm-6">
+                    <?php if($meat_products->have_posts()) : ?>
+                        <div class="meat-products">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/meat-nav.jpg" alt="Meat products" class="pull-left">
+                            <ul>
+                                <?php while($meat_products->have_posts()) : $meat_products->the_post(); ?>
+                                    <li><a href="<?php echo get_permalink(); ?>" title="View our <?php the_title(); ?> product"><?php the_title(); ?></a></li>
+                                <?php endwhile; ?>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </nav>
     <main id="main">
