@@ -73,6 +73,7 @@ if(!$current_url_string) {
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/EureakCoveLogoMob.svg" alt="Eureka Cove logo" width="100" class="hidden-sm hidden-md hidden-lg mobile-logo">
                     <a class="open-nav pull-right mobile"><img src="<?php echo get_template_directory_uri(); ?>/img/menu.svg" alt="Menu open"></a>
                     <div class="navbar">
                         <ul>
