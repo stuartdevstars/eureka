@@ -30,6 +30,12 @@ header#header {
 			margin-left: 15px;
 		}
 	}
+
+	.sticky & {
+		@media @phablet {
+			margin-bottom: 56px;
+		}
+	}
 }
 
 nav#nav {
@@ -41,13 +47,41 @@ nav#nav {
 	transition: all 0.3s ease;
 
 	@media @phablet {
-		height: auto;
+		min-height: 56px;
 		background-repeat: repeat;
 		padding: 5px 0;
 		text-align: left;
 	}
 
+	.row > div {
+		@media @phablet {
+			padding: 0;
+		}
+	}
+
+	.sticky & {
+		@media @phablet {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			z-index: 200;
+		}
+
+		.mobile-logo {
+			opacity: 1.0;
+		}
+	}
+
+	.mobile-logo {
+		margin-left: 10px;
+		opacity: 0;
+		transition: opacity ease 0.5s;
+	}
+
 	.open-nav {
+		margin-right: 10px;
 		line-height: 38px;
 	}
 
@@ -55,15 +89,18 @@ nav#nav {
 		@media @phablet {
 			display: none;
 			position: absolute;
-			top: 51px;
-			left: 0;
-			right: 0;
 			width: 100%;
-			height: 9999px;
+			margin-top: 5px;
 			text-align: center;
 			z-index: 999;
 			background: rgba(34, 34, 34, 0.95);
 			border-top: 1px solid #aaaaaa;
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+
+		&.visible {
+			display: block;
 		}
 
 		.social {
