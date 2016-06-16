@@ -9,8 +9,23 @@
 
 
 
-	$('#nav .get-in-touch, #footer .get-in-touch-mobile').click(function(e) {
+	$('#nav .get-in-touch').click(function(e) {
 		$('#get-in-touch').slideDown();
+		$('html,body').animate({
+          scrollTop: $('#get-in-touch').offset().top
+        }, 1000);
+
+        e.preventDefault();
+	});
+
+	$('#footer .get-in-touch-mobile').click(function(e) {
+		$('#get-in-touch').slideToggle(300, function(){
+			if($('#get-in-touch').is(':visible')) {
+				$('#footer .get-in-touch-mobile img').attr('src', base_url + '/img/close.svg');
+			} else {
+				$('#footer .get-in-touch-mobile img').attr('src', base_url + '/img/plus.svg');
+			}
+		});
 		$('html,body').animate({
           scrollTop: $('#get-in-touch').offset().top
         }, 1000);
@@ -109,6 +124,11 @@
 	}
 
 	$eureka.animateOurStory = function() {
+
+		if(!$('#our-story').length) {
+			return false;
+		}
+
 		var $posFromTop = $(document).scrollTop();
 		var $windowHeight = $(window).height();
 		var $windowDisplayLine = ($windowHeight / 100) * 80;

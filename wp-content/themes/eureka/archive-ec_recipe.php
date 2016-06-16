@@ -17,6 +17,9 @@ if(isset($_GET['type']) && $_GET['type']) {
 
 		<?php while ($loop->have_posts() ) : $loop->the_post(); ?>
 
+			<?php $recipe_meta = get_post_custom(); ?>
+			<?php $dietary_information = unserialize($recipe_meta['dietary_information'][0]); ?>
+
 			<?php $type = get_field('recipe_type'); ?>
 			<?php $image = get_field('recipe_image'); ?>
 			<?php $featured = get_field('featured_recipe'); ?>
@@ -62,20 +65,28 @@ if(isset($_GET['type']) && $_GET['type']) {
 									<li>Cooking time: <?php echo $recipe_meta['recipe_cooking_time'][0]; ?></li>
 								<?php endif; ?>
 							</ul>
-							<table class="pull-right">
-								<tr>
-									<td<?php if(!empty($dietary_information) && !in_array('Gluten free', $dietary_information) || empty($dietary_information)): ?> class="disabled"<?php endif; ?>>Gluten Free</td>
-									<td<?php if(!empty($dietary_information) && !in_array('Kosher', $dietary_information) || empty($dietary_information)): ?> class="disabled"<?php endif; ?>>Kosher</td>
-								</tr>
-								<tr>
-									<td<?php if(!empty($dietary_information) && !in_array('Vegan', $dietary_information) || empty($dietary_information)): ?> class="disabled"<?php endif; ?>>Vegan</td>
-									<td<?php if(!empty($dietary_information) && !in_array('Halal', $dietary_information) || empty($dietary_information)): ?> class="disabled"<?php endif; ?>>Halal</td>
-								</tr>
-								<tr>
-									<td<?php if(!empty($dietary_information) && !in_array('Vegetarian', $dietary_information) || empty($dietary_information)): ?> class="disabled"<?php endif; ?>>Vegetarian</td>
-									<td<?php if(!empty($dietary_information) && !in_array('Diary free', $dietary_information) || empty($dietary_information)): ?> class="disabled"<?php endif; ?>>Diary free</td>
-								</tr>
-							</table>
+							<?php if(!empty($dietary_information)): ?>
+								<?php $count = 1; ?>
+								<?php $information_count = 0; ?>
+
+								<table class="pull-right">
+									<?php foreach($dietary_information as $information): ?>
+										<?php if($count == 0): ?>
+											<tr>
+										<?php endif; ?>
+
+										<td><?php echo $information; ?></td>
+
+										<?php $count++; ?>
+										<?php $information_count++; ?>
+
+										<?php if($column_count == 5 || $information_count == $loop->post_count): ?>
+											</tr>
+										<?php $column_count = 0; ?>
+										<?php endif; ?>
+									<?php endforeach; ?>
+								</table>
+							<?php endif; ?>
 						</div>
 						<div class="text-right">
 							<a href="<?php echo get_permalink(); ?>" class="btn btn-primary" title="View full recipe">Full recipe</a>
