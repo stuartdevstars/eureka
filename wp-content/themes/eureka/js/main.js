@@ -18,9 +18,19 @@
 
 	$('#nav .get-in-touch').click(function(e) {
 		$('#get-in-touch').slideDown();
-		$('html,body').animate({
-			scrollTop: $('#get-in-touch').offset().top
-        }, 1000);
+		if(window.matchMedia("(max-width: 767px)").matches) {
+			$('html,body').animate({
+				scrollTop: $('#get-in-touch').offset().top - 56
+        	}, 1000);
+		} else {
+			$('html,body').animate({
+				scrollTop: $('#get-in-touch').offset().top
+        	}, 1000);
+		}
+
+        if(window.matchMedia("(max-width: 767px)").matches) {
+        	$('#nav .navbar').removeClass('visible');
+        }
 
         e.preventDefault();
 	});
