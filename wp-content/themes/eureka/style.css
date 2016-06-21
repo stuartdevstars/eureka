@@ -2161,12 +2161,14 @@ footer#footer .copyright a {
   top: 0;
   left: 6%;
   width: 25.5%;
+  opacity: 1;
 }
 #our-story img.intro-text,
 #our-story div.intro-text {
   top: 225px;
   left: 11.5%;
   width: 23%;
+  opacity: 1;
 }
 @media (min-width: 768px) and (max-width: 990px) {
   #our-story img.intro-text,
@@ -2182,6 +2184,7 @@ footer#footer .copyright a {
   right: 0px;
   width: 64.5%;
   padding-top: 5%;
+  opacity: 1;
 }
 #our-story img.explorer,
 #our-story div.explorer {

@@ -145,8 +145,10 @@
 		if(window.matchMedia("(min-width: 768px)").matches) {
 			$('.recipes .row').each(function() {
 				var $maxHeight = 0;
-				$(this).find('.recipe-box').each(function(){
-					$maxHeight = $(this).outerHeight();
+				$(this).find('.recipe-box').each(function() {
+					if($(this).outerHeight() > $maxHeight) {
+						$maxHeight = $(this).outerHeight();
+					}
 				});
 
 				$(this).find('.recipe-box').outerHeight($maxHeight);
@@ -174,9 +176,6 @@
 		var $windowHeight = $(window).height();
 		var $windowDisplayLine = ($windowHeight / 100) * 80;
 
-		var $heading = $('#our-story .heading');
-		var $introText = $('#our-story .intro-text');
-		var $map = $('#our-story .map');
 		var $photo = $('#our-story .photo');
 		var $fishText = $('#our-story .fish-text');
 		var $cows = $('#our-story .cows');
@@ -186,15 +185,6 @@
 		var $trail = $('#our-story .trail');
 		var $finalText = $('#our-story .final-text');
 
-		if($heading.offset().top < $posFromTop + $windowDisplayLine) {
-			$heading.animate({'opacity': '1.0'}, 500);
-		}
-		if($introText.offset().top < $posFromTop + $windowDisplayLine) {
-			$introText.animate({'opacity': '1.0'}, 500);
-		}
-		if($map.offset().top < $posFromTop + $windowDisplayLine) {
-			$map.animate({'opacity': '1.0'}, 500);
-		}
 		if($photo.offset().top < $posFromTop + $windowDisplayLine) {
 			$photo.animate({'opacity': '1.0'}, 500);
 		}
