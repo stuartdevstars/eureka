@@ -43,7 +43,7 @@ $tesco_fish_products = get_posts(array(
 		'relation'		=> 'AND',
 		array(
 			'key'	 	=> 'where_to_buy',
-			'value'	  	=> 'Costco',
+			'value'	  	=> 'Tesco',
 			'compare' 	=> 'LIKE',
 		),
 		array(
@@ -116,10 +116,15 @@ $sainsburys_meat_products = get_posts(array(
 				<?php while (have_posts()) : the_post(); ?>
 					<section id="buy-info">
 						<header><span>Bring our tasty treasures home!</span> <?php the_content(); ?></header>
-						<div class="store-details-text small">Store details correct at time of</div>
+						<div class="store-details-text small">Store details correct at time of publishing</div>
 						<div class="store-exclusive exclusive small">* Store exclusive</div>
 						<div class="empty small">&nbsp;</div>
 						<div class="store-info">
+							
+							
+							<!-- Costco -->
+							
+							
 							<article class="store">
 								<div class="contact">
 									<img src="<?php echo get_template_directory_uri(); ?>/img/stores/costco.png" alt="Costco logo" />
@@ -149,6 +154,9 @@ $sainsburys_meat_products = get_posts(array(
 									<?php endif; ?>
 								</div>
 							</article>
+							
+							<!-- hide Tesco 
+							
 							<article class="store">
 								<div class="contact">
 									<img src="<?php echo get_template_directory_uri(); ?>/img/stores/tesco.png" alt="Tesco logo" />
@@ -178,6 +186,11 @@ $sainsburys_meat_products = get_posts(array(
 									<?php endif; ?>
 								</div>
 							</article>
+							
+							 end hide Tesco -->
+							 
+							 <!-- hide Sainos 
+							
 							<article class="store">
 								<div class="contact">
 									<img src="<?php echo get_template_directory_uri(); ?>/img/stores/sainsburys.png" alt="Sainsburys logo" />
@@ -207,6 +220,9 @@ $sainsburys_meat_products = get_posts(array(
 									<?php endif; ?>
 								</div>
 							</article>
+							
+							end hide Sainos -->
+							
 						</div>
 						<div class="brand-graphic hidden-xs"><img src="<?php echo get_template_directory_uri(); ?>/img/brand-graphic.png" alt="" class="img-responsive center-block"></div>
 					</section>
